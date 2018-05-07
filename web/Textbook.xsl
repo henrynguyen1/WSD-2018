@@ -14,7 +14,7 @@
     <!-- TODO customize transformation rules 
          syntax recommendation http://www.w3.org/TR/xslt 
     -->
-    <xsl:template match="Textbook">
+    <xsl:template match="textbooks">
         <html>
             <head>
                 <title>Textbook.xsl</title>
@@ -37,16 +37,18 @@
             <xsl:apply-templates/> 
         </h1>        
     </xsl:template>
-          
+   <!--       
     <xsl:template match="textbooks/book/author">    
         <div class="author"> By <xsl:apply-templates/> </div>        
     </xsl:template>
-    
-    <xsl:template match="info">
+    -->
+    <xsl:template match="book">
         
         <table class="book">
             <thead>
                 <tr>
+                    <th>title</th>
+                    <th>author</th>
                     <th>ISBN</th>
                     <th>Publisher</th>
                     <th>Date</th>
@@ -61,6 +63,12 @@
         
         
     </xsl:template>
+    
+    <xsl:template match="book/title|author|ISBN|publisher|date|abstract">
+        <td> <xsl:apply-templates/> </td>
+        
+    </xsl:template>
+    
 
 
 </xsl:stylesheet>
