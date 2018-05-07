@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Textbook.xsl"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<textbooks>
+    <book>
+        <title>Violent Python</title>
+        <author>TJ O'connor</author>
+        <ISBN> 1597499579</ISBN>
+        <publisher>Syngress</publisher>
+        <date>9/22/2012</date>
+        <abstract>
+            Violent Python shows you how to move from a theoretical 
+            understanding of offensive computing concepts to a practical 
+            implementation. Instead of relying on another attacker’s tools, this
+            book will teach you to forge your own weapons using the Python 
+            programming language. This book demonstrates how to write Python 
+            scripts to automate large-scale network attacks, extract metadata, 
+            and investigate forensic artifacts. It also shows how to write code 
+            to intercept and analyze network traffic using Python, craft and 
+            spoof wireless frames to attack wireless and Bluetooth devices, 
+            and how to data-mine popular social media websites and evade 
+            modern anti-virus. 
+        </abstract>
+    </book>
+    <book>
+        <title>
+            Black hat Python: Python Programming for hackers and
+            pentesters
+        </title>
+        <author>Justin Seitz</author>
+        <ISBN>1593275900</ISBN>
+        <publisher>No Starch Press</publisher>
+        <date>21/12/2014</date>
+        <abstract>
+            In Black Hat Python, the latest from Justin Seitz 
+            (author of the best-selling Gray Hat Python), you’ll explore the 
+            darker side of Python’s capabilities—writing network sniffers, 
+            manipulating packets, infecting virtual machines, creating stealthy 
+            trojans, and more.
+        </abstract>
+    </book>
+    <book>
+        <title>
+            Kali Linux Revealed: Mastering the Penetration Testing 
+            Distribution
+        </title>
+        <author>Raphael Hertzog</author>
+        <ISBN>0997615605</ISBN>
+        <publisher>Offsec Press</publisher>
+        <date>06/05/2017</date>
+        <abstract>
+            In this book, we'll focus on the Kali Linux platform itself, and 
+            help you understand and maximize Kali from the ground up. The 
+            developers will walk you through Kali Linux features and 
+            fundamentals, provide a crash course in basic Linux commands and 
+            concepts, and then walk you through the most common Kali Linux 
+            installation scenarios. You'll learn how to configure, troubleshoot 
+            and secure Kali Linux and then dive into the powerful Debian package 
+            manager. Throughout this expansive section, you'll learn how to 
+            install and configure packages, how to update and upgrade your Kali 
+            installation, and how to create your own custom packages. Then 
+            you'll learn how to deploy your custom installation across 
+            massive enterprise networks. Finally, you'll be guided through 
+            advanced topics such as kernel compilation, custom ISO creation, 
+            industrial-strength encryption, and even how to install crypto 
+            kill switches to safeguard your sensitive information.
+        </abstract>
+    </book>
+</textbooks>
