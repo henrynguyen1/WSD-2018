@@ -10,11 +10,12 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html"/>
+    <xsl:param name="bgColor"/>
 
     <!-- TODO customize transformation rules 
          syntax recommendation http://www.w3.org/TR/xslt 
     -->
-    <xsl:template match="textbooks">
+    <xsl:template match="textbook">
         <html>
             <head>
                 <title>Textbook.xsl</title>
@@ -32,7 +33,7 @@
         </html>
     </xsl:template>
     
-    <xsl:template match="textbooks/book/title">    
+    <xsl:template match="textbook/book/title">    
         <h1>
             <xsl:apply-templates/> 
         </h1>        
