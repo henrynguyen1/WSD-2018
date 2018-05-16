@@ -2,15 +2,14 @@
 
 <!--
     Document   : Textbook.xsl
-    Created on : 7 May 2018, 1:41 PM
-    Author     : Anh Minh Tran
+    Created on : May 16, 2018, 6:41 PM
+    Author     : bsapr
     Description:
         Purpose of transformation follows.
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html"/>
-    <xsl:param name="bgColor"/>
 
     <!-- TODO customize transformation rules 
          syntax recommendation http://www.w3.org/TR/xslt 
@@ -19,7 +18,7 @@
         <html>
             <head>
                 <title>Textbook.xsl</title>
-                <style>
+              <style>
                     .author{font-style: bold;}
                     table.book { width: 80%; border: solid 1px black; border-collapse: collapse; }
                     table.book td { border: solid 1px #999; }
@@ -49,8 +48,8 @@
         <table class="book">
             <thead>
                 <tr>
-                    <th>title</th>
-                    <th>author</th>
+                    <th>Title</th>
+                    <th>Author</th>
                     <th>ISBN</th>
                     <th>Publisher</th>
                     <th>Date</th>
@@ -71,7 +70,4 @@
         <td> <xsl:apply-templates/> </td>
         
     </xsl:template>
-    
-
-
 </xsl:stylesheet>

@@ -14,12 +14,12 @@
         <title>Main</title>
     </head>
     <body>        
-        <!-- Replace the URL value with the location of movies.xml on your PC-->
-    <c:import url="file:///C:\Users\bsapr\Google Drive\3. Web Service development\Assignment\WSD-2018\web\Textbook.xml"
+        <!-- Replace the URL value with the location of Textbook.xml on your PC-->
+    <c:import url="file:///C:\Users\bsapr\Google Drive\3. Web Service development\Lab Work\labs\WSD-2018\web\Textbook.xml"
               var="inputDoc" />
 
-    <!-- Replace the URL value with the location of movies.xsl on your PC-->
-    <c:import url="file:///C:\Users\bsapr\Google Drive\3. Web Service development\Assignment\WSD-2018\web\Textbook.xsl"
+    <!-- Replace the URL value with the location of main.xsl on your PC-->
+    <c:import url="file:///C:\Users\bsapr\Google Drive\3. Web Service development\Lab Work\labs\WSD-2018\web\main.xsl"
               var="stylesheet" />
      
     <!-- Transform xml inputDoc using stylesheet -->
