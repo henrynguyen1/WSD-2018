@@ -21,7 +21,7 @@
                 <title>Textbook.xsl</title>
                 <style>
                     .author{font-style: bold;}
-                    table.book { border: solid 1px black; border-collapse: collapse; }
+                    table.book { width: 80%; border: solid 1px black; border-collapse: collapse; }
                     table.book td { border: solid 1px #999; }
                     .even { background: #fff; }
                     .odd { background: #f2f2f2; }
@@ -33,11 +33,12 @@
         </html>
     </xsl:template>
     
-    <xsl:template match="textbook/book/title">    
+  <!--  <xsl:template match="textbook/book/title">    
         <h1>
             <xsl:apply-templates/> 
         </h1>        
     </xsl:template>
+    -->
    <!--       
     <xsl:template match="textbooks/book/author">    
         <div class="author"> By <xsl:apply-templates/> </div>        
@@ -55,6 +56,7 @@
                     <th>Date</th>
                     <th>Abstract</th>
                     <th>Category</th>
+                    <th>Reservation</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,7 +67,7 @@
         
     </xsl:template>
     
-    <xsl:template match="book/title|author|ISBN|publisher|date|abstract">
+    <xsl:template match="book/title|author|ISBN|publisher|date|abstract|category|state">
         <td> <xsl:apply-templates/> </td>
         
     </xsl:template>
