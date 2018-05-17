@@ -23,9 +23,17 @@
                 <td>Password</td>
                 <td><input type ="password" name="password"> </td>
             </tr>
+             <tr>
+                <td>Login</td>
+                <td><input type ="submit" name="login"> </td>
+            </tr>
+            </form>
+</table>
+            <form action ="register.jsp" method= "post">
+                <table>
             <tr>
-                <td></td>
-                <td><input type="submit" value="Login"> </td>
+                <td>Register</td>
+                <td><input type="submit" value="register"> </td>
             </tr>
         </table>
         </form>
