@@ -42,7 +42,7 @@
             </thead>
             <tbody>
                 <td width="400px"> 
-                    <a href="">
+                    <a href="/bookDetails?id=<xsl:apply-templates select="id"/>">
                         <xsl:apply-templates select="title"/>
                     </a>
                 </td>  

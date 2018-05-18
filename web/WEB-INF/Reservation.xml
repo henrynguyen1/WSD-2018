@@ -6,7 +6,8 @@ and open the template in the editor.
 -->
 
 
-<Reservation>
+<reservations>
+    <reservation id="123" userId="abc" bookId="def"/>
     <ReservationID>
     <Username>MJ23</Username>
         <email>mjordan@gmail.com </email>
@@ -24,4 +25,4 @@ and open the template in the editor.
             Distribution</title>
         </book>
     </ReservationID>
- </Reservation>
+ </reservations>
