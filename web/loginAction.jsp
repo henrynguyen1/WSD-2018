@@ -29,12 +29,12 @@
             session.setAttribute("user",user);
         
             %>
-        <p>Login successful. Click <a href="main.jsp" >here</ahref> 
+            <p>Login successful. Click <a href="main.jsp" >here< </a> 
            to proceed to the main page </p>
         <%}
         else
         { %>
-        <p>Password incorrect. Click <a href="login.jsp"><u>here</u></a> 
+        <p>Password incorrect. Click <a href="login.jsp">here</a> 
             to try again.</p>
         <% }%>
         
