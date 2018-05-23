@@ -17,15 +17,15 @@ import javax.xml.bind.Unmarshaller;
  *
  * @author Anh Minh Tran
  */
-public class UserbaseApplication implements Serializable {
+public class UserBaseApplication implements Serializable {
 
     private String filePath;
     private Users users;
 
-    public UserbaseApplication() {
+    public UserBaseApplication() {
     }
 
-    public UserbaseApplication(String filePath, Users users) {
+    public UserBaseApplication(String filePath, Users users) {
         this.filePath = filePath;
         this.users = users;
     }
