@@ -13,6 +13,7 @@ import project.wsd.Textbook;
  * @author Anh Minh Tran
  */
 public class TextboookSOAPClient {
+    /*
     public static void main(String[] args){
 		  TextbookApp locator = new DiaryApp();
 		  DiarySOAP dairySOAP = locator.getDiarySOAPPort();
@@ -34,5 +35,5 @@ public class TextboookSOAPClient {
                   }
 		  sc.close();
 	 }
-    
+    */
 }

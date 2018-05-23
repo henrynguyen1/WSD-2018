@@ -41,9 +41,9 @@ public class Users implements Serializable {
         return null; // Login incorrect. Return null.
     }
     
-    public User getUser(String email){
+    public User getUser(int userID){
        for (User user: list){
-           if(user.getEmail().equals(email))
+           if(user.getUserID() == userID)
                return user;
        }
        return null;

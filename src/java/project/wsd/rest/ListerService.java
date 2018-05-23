@@ -5,20 +5,24 @@
  */
 package project.wsd.rest;
 
+/**
+ *
+ * @author bsapr
+ */
+import project.wsd.*;
 import javax.servlet.ServletContext;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import javax.xml.bind.JAXBException;
 import java.io.*;
-import project.wsd.*;
 
-@Path("/userbase")
-public class UserService {
+@Path("/lister")
+public class ListerService {
 
     @Context
     private ServletContext application;
 
-    private UserBaseApplication getUserBase() throws JAXBException, IOException {
+    private ListerApplication getListerApp() throws JAXBException, IOException {
         // The web server can handle requests from different clients in parallel.
         // These are called "threads".
         //
@@ -28,32 +32,22 @@ public class UserService {
         // The "synchronized" keyword is used to lock the application object while
         // we're manpulating it.
         synchronized (application) {
-            UserBaseApplication Userbase = (UserBaseApplication) application.getAttribute("userBase");
-            if (Userbase == null) {
-                Userbase = new UserBaseApplication();
-                Userbase.setFilePath(application.getRealPath("WEB-INF/user.xml"));
-                application.setAttribute("userBase", Userbase);
+            ListerApplication listerApp = (ListerApplication) application.getAttribute("listerApp");
+            if (listerApp == null) {
+                listerApp = new ListerApplication();
+                listerApp.setFilePath(application.getRealPath("WEB-INF/user.xml"));
+                application.setAttribute("listerApp", listerApp);
             }
-            return Userbase;
+            return listerApp;
         }
     }
     
     @Path("users")
     @GET
     @Produces(MediaType.APPLICATION_XML)
-    public Users getUsers() throws JAXBException, IOException {
-        return getUserBase().getUsers();
+    public User getUsers(@QueryParam("userID") int userID) throws JAXBException, IOException {
+        return getListerApp().getUsers().getUser(userID);
     }
     
-    @Path("users/{email}")
-    @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public User getUser(@PathParam("email") String email) throws JAXBException, IOException
-    {
-        return getUserBase().getUsers().getUser(email);
-    }
 
-    /**
-     * YOUR METHODS WILL BE INSERTED HERE *
-     */
 }

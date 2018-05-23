@@ -18,7 +18,7 @@
     </head>
     <body>        
         <!-- Replace the URL value with the location of Textbook.xml on your PC-->
-    <c:import url=".//WEB-INF/Textbook.xml"
+    <c:import url="./WEB-INF/Textbook.xml"
               var="inputDoc" />
 
     <!-- Replace the URL value with the location of main.xsl on your PC-->
