@@ -11,16 +11,16 @@ import javax.xml.bind.*;
  *
  * @author Henry
  */
-public class bookApplication {
+public class TextbookApplication {
      private String filePath;
-     private Users users;
+     private Textbook textbooks;
      
-     public bookApplication(String filepath, Users users){
+     public TextbookApplication(String filepath, Textbook textbooks){
     this.filePath = filePath;
-    this.users = users;
+    this.textbooks = textbooks;
 }
      
-     public bookApplication(){
+     public TextbookApplication(){
 }
      
      public String getFilePath() {
@@ -34,14 +34,14 @@ public class bookApplication {
  
         // Now unmarshal the object from the file
         FileInputStream fin = new FileInputStream(filePath);
-        users = (Users)u.unmarshal(fin); // This loads the "shop" object
+        textbooks = (Textbook)u.unmarshal(fin); // This loads the "shop" object
         fin.close();
     }
 
 
     
     public void updateXML(Users users, String filePath) throws Exception {
-        this.users = users;
+        this.textbooks = textbooks;
         this.filePath = filePath;
         JAXBContext jc = JAXBContext.newInstance(Users.class);
         Marshaller m = jc.createMarshaller();
@@ -52,21 +52,21 @@ public class bookApplication {
     }
     
     
-    public void saveUsers() throws JAXBException, IOException {
+    public void saveTextbook() throws JAXBException, IOException {
         JAXBContext jc = JAXBContext.newInstance(Users.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         FileOutputStream fout = new FileOutputStream(filePath);
-        m.marshal(users, fout);
+        m.marshal(textbooks, fout);
         fout.close();
     }
     
-    public Users getUsers() {
-        return users;
+    public Textbook getTextbook() {
+        return textbooks;
     }
 
-    public void setUsers(Users users) {
-        this.users = users;
+    public void setTextbook(Textbook textbooks) {
+        this.textbooks = textbooks;
     }
     
 
