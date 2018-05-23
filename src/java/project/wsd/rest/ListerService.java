@@ -46,8 +46,8 @@ public class ListerService {
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public User getUsers(@QueryParam("userID") int userID) throws JAXBException, IOException {
-        return getListerApp().getUsers().getUser(userID);
-    }
+        return getListerApp().getUsers().getUser(userID);}
+    
     
 
 }

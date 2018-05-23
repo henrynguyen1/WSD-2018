@@ -11,11 +11,11 @@ import javax.xml.bind.*;
  *
  * @author Henry
  */
-public class TextbookApplication {
+public class TextbookApplication implements Serializable {
      private String filePath;
-     private Textbook textbooks;
+     private Textbooks textbooks;
      
-     public TextbookApplication(String filepath, Textbook textbooks){
+     public TextbookApplication(String filePath, Textbooks textbooks){
     this.filePath = filePath;
     this.textbooks = textbooks;
 }
@@ -27,33 +27,30 @@ public class TextbookApplication {
         return filePath;
     }
 
-    public void setFilePath(String filePath) throws Exception {
-        // Create the unmarshaller
-        JAXBContext jc = JAXBContext.newInstance(Users.class);
-        Unmarshaller u = jc.createUnmarshaller();
- 
-        // Now unmarshal the object from the file
-        FileInputStream fin = new FileInputStream(filePath);
-        textbooks = (Textbook)u.unmarshal(fin); // This loads the "shop" object
-        fin.close();
+    public void setFilePath(String filePath) {//throws JAXBException, FileNotFoundException, IOException {
+        this.filePath = filePath;
+        try {
+            // Create the unmarshaller
+            JAXBContext jc = JAXBContext.newInstance(Textbooks.class);
+            Unmarshaller u = jc.createUnmarshaller();
+
+            // Now unmarshal the object from the file
+            FileInputStream fin = new FileInputStream(filePath);
+            textbooks = (Textbooks) u.unmarshal(fin); // This loads the "shop" object
+            fin.close();
+        } catch (Exception e) {
+            if (textbooks == null) {
+                textbooks = new Textbooks();
+            }
+        }
     }
 
 
     
-    public void updateXML(Users users, String filePath) throws Exception {
+    public void updateXML(Textbooks textbooks, String filePath) throws Exception {
         this.textbooks = textbooks;
         this.filePath = filePath;
-        JAXBContext jc = JAXBContext.newInstance(Users.class);
-        Marshaller m = jc.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        FileOutputStream fout = new FileOutputStream(filePath);
-        m.marshal(users, fout);
-        fout.close();
-    }
-    
-    
-    public void saveTextbook() throws JAXBException, IOException {
-        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        JAXBContext jc = JAXBContext.newInstance(Textbooks.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         FileOutputStream fout = new FileOutputStream(filePath);
@@ -61,11 +58,21 @@ public class TextbookApplication {
         fout.close();
     }
     
-    public Textbook getTextbook() {
+    
+    public void saveTextbooks() throws JAXBException, IOException {
+        JAXBContext jc = JAXBContext.newInstance(Textbooks.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePath);
+        m.marshal(textbooks, fout);
+        fout.close();
+    }
+    
+    public Textbooks getTextbooks() {
         return textbooks;
     }
 
-    public void setTextbook(Textbook textbooks) {
+    public void setTextbook(Textbooks textbooks) {
         this.textbooks = textbooks;
     }
     

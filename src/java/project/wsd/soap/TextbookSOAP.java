@@ -14,8 +14,8 @@ import javax.servlet.ServletContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
-import project.wsd.Textbook;
-import project.wsd.TextbookApplication;
+import project.wsd.*;
+
 
 /**
  *
@@ -40,7 +40,7 @@ public class TextbookSOAP {
         }
     }
     
-    public Textbook fetchBook() throws IOException, Exception{
-        return getBookApp().getTextbook();        
+    public Textbooks fetchBook() throws IOException, Exception{
+        return getBookApp().getTextbooks();        
 }
 }

@@ -6,11 +6,8 @@
 package project.wsd;
 import java.io.Serializable;
 import java.util.ArrayList;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
+
 
 /**
  *
@@ -18,39 +15,33 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "textbook")
-public class Textbook implements Serializable {
-    @XmlAttribute(name = "title")
+@XmlRootElement()
+public class Textbook implements Serializable {    
+    @XmlElement(name = "title")
     private String title;
-
-    @XmlAttribute(name = "author")
+    @XmlElement(name = "author")
     private String author;
-    
-    @XmlAttribute(name = "info")
-    private String info;
-    
-    @XmlAttribute(name = "ISBN")
+    @XmlElement(name = "ISBN")
     private String ISBN;
-
     @XmlElement(name = "publisher")
     private String publisher;
-    
     @XmlElement(name = "date")
     private String date;
-    
     @XmlElement(name = "abstracts")
     private String abstracts;
-    
     @XmlElement(name = "category")
     private String category;
-    
     @XmlElement(name = "reservation")
     private String reservation;
-    
-   
+    @XmlAttribute(name = "bookID")
+    private int bookID;
 
+public Textbook(){
+
+}
 
 public Textbook(String title, String author, String ISBN, String publisher, String abstracts, String category, String reservation) {
+
 
 this.title = title;
 this.author = author;
@@ -64,10 +55,17 @@ this.reservation = reservation;
 
 
 
-public Textbook(){
 
-}
 
+
+    public int getBookID() {
+        return bookID;
+    }
+
+    public void setBookID(int bookID) {
+        this.bookID = bookID;
+    }
+    
     public String getTitle() {
         return title;
     }
@@ -82,14 +80,6 @@ public Textbook(){
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    
-    public String getInfo(){
-        return info;
-    }
-    public void setInfo(String info){
-        this.info = info;
     }
 
     public String getISBN() {

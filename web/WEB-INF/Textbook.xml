@@ -6,12 +6,11 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<textbook>
-    <book bookID="1">
-
+<textbooks>
+    <textbook bookID="1">
         <title>Violent Python</title>
         <author>TJ O'connor</author>
-        <info>
+
             <ISBN> 1597499579</ISBN>
             <publisher>Syngress</publisher>
             <date>9/22/2012</date>
@@ -22,16 +21,16 @@ and open the template in the editor.
             </abstract>
             <category>IT</category>
             <state>N</state>
-        </info>
-    </book>
-    <book bookID="2">
+
+    </textbook>
+    <textbook bookID="2">
 
         <title>
             Black hat Python: Python Programming for hackers and
             pentesters
         </title>
         <author>Justin Seitz</author>
-        <info>
+
             <ISBN>1593275900</ISBN>
             <publisher>No Starch Press</publisher>
             <date>21/12/2014</date>
@@ -42,16 +41,16 @@ and open the template in the editor.
             </abstract>
             <category>IT</category>
             <state>N</state>
-        </info>
-    </book>
-    <book bookID="3">
+
+    </textbook>
+    <textbook bookID="3">
 
         <title>
             Kali Linux Revealed: Mastering the Penetration Testing 
             Distribution
         </title>
         <author>Raphael Hertzog</author>
-        <info>
+
             <ISBN>0997615605</ISBN>
             <publisher>Offsec Press</publisher>
             <date>06/05/2017</date>
@@ -61,13 +60,13 @@ and open the template in the editor.
             </abstract>
             <category>IT</category>
             <state>N</state>
-        </info>
-    </book>
-    <book bookID="4">
+
+    </textbook>
+    <textbook bookID="4">
 
         <title>Fundamentals of economics</title>
         <author>William Boyes</author>
-        <info>
+
             <ISBN>0538481196</ISBN>
             <publisher>Cengage Learning</publisher>
             <date>2011</date>
@@ -79,13 +78,13 @@ and open the template in the editor.
             </abstract>
             <category>Business</category>
             <state>N</state>
-        </info>
-    </book>
+
+    </textbook>
     
-    <book bookID="5">
+    <textbook bookID="5">
         <title>Social Issues in Diagnosis </title>
         <author>Annemarie Goldstein Jutel, Kevin Dew</author>
-        <info>
+
             <ISBN>9781421413006</ISBN>
             <publisher>John Hopkins University Press</publisher>
             <date>2014</date>
@@ -102,6 +101,6 @@ and open the template in the editor.
             </abstract>
             <category>Medical</category>
             <state>Sold</state>
-        </info>
-    </book>
-</textbook>
+
+    </textbook>
+</textbooks>
