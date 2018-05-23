@@ -6,25 +6,25 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <users>
-    <user>
+    <user userID="1">
         <name>Michael Nguyen</name>
         <email>MichaelNg@gmail.com</email>
         <dob>01/05/1995</dob>
         <password>blah1</password>
     </user>
-    <user>
+    <user userID="2">
         <name>Joel Miller</name>
         <email>Joel@Miller.com</email>
         <dob>26/09/1985</dob>
         <password>blah2</password>
     </user>
-    <user>
+    <user userID="3">
         <name>Troy Baker</name>
         <email>Troy@Baker.com</email>
         <dob>02/05/1987</dob>
         <password>blah3</password>
     </user>
-    <user>
+    <user userID="4">
         <name>Tweeny Scott</name>
         <email>Tweeny@tweenyscott.com</email>
         <dob>14/04/1978</dob>

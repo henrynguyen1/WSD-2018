@@ -7,7 +7,7 @@ and open the template in the editor.
 -->
 
 <textbook>
-    <book>
+    <book bookID="1">
 
         <title>Violent Python</title>
         <author>TJ O'connor</author>
@@ -24,7 +24,7 @@ and open the template in the editor.
             <state>N</state>
         </info>
     </book>
-    <book>
+    <book bookID="2">
 
         <title>
             Black hat Python: Python Programming for hackers and
@@ -44,7 +44,7 @@ and open the template in the editor.
             <state>N</state>
         </info>
     </book>
-    <book>
+    <book bookID="3">
 
         <title>
             Kali Linux Revealed: Mastering the Penetration Testing 
@@ -63,7 +63,7 @@ and open the template in the editor.
             <state>N</state>
         </info>
     </book>
-    <book>
+    <book bookID="4">
 
         <title>Fundamentals of economics</title>
         <author>William Boyes</author>
@@ -82,7 +82,7 @@ and open the template in the editor.
         </info>
     </book>
     
-    <book>
+    <book bookID="5">
         <title>Social Issues in Diagnosis </title>
         <author>Annemarie Goldstein Jutel, Kevin Dew</author>
         <info>
