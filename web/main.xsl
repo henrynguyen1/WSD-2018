@@ -38,6 +38,8 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Category</th>
+                    <th>Reserve</th>
+                    <th>Purchase</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,6 +53,12 @@
                 </td>
                 <td>
                     <xsl:apply-templates select=".//category"/>
+                </td>
+                <td>
+                    <a href="http://localhost:8080/Project/reserve?id={@bookID}">Reserve</a>
+                </td>
+                <td>
+                    <a href="http://localhost:8080/Project/purchase?id={@bookID}">Purchase</a>
                 </td>
                 
             </tbody>
