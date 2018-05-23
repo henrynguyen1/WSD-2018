@@ -13,7 +13,7 @@
     </head>
     <% session.invalidate(); %>
     <body>
-        <p>You have been logged out. Click <a href="index.jsp">here </a> 
+        <p>You have been logged out. Click <a href="main.jsp">here </a> 
             to return to the main page</p>
     </body>
 </html>
