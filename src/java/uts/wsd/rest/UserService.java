@@ -18,7 +18,7 @@ public class UserService {
     @Context
     private ServletContext application;
 
-    private UserbaseApplication getDiaryApp() throws JAXBException, IOException {
+    private UserBaseApplication getUserBase() throws JAXBException, IOException {
         // The web server can handle requests from different clients in parallel.
         // These are called "threads".
         //
@@ -28,10 +28,10 @@ public class UserService {
         // The "synchronized" keyword is used to lock the application object while
         // we're manpulating it.
         synchronized (application) {
-            UserbaseApplication Userbase = (UserbaseApplication) application.getAttribute("userBase");
+            UserBaseApplication Userbase = (UserBaseApplication) application.getAttribute("userBase");
             if (Userbase == null) {
-                Userbase = new UserbaseApplication();
-                Userbase.setFilePath(application.getRealPath("WEB-INF/users.xml"));
+                Userbase = new UserBaseApplication();
+                Userbase.setFilePath(application.getRealPath("WEB-INF/user.xml"));
                 application.setAttribute("userBase", Userbase);
             }
             return Userbase;
@@ -42,7 +42,7 @@ public class UserService {
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public Users getUsers() throws JAXBException, IOException {
-        return getDiaryApp().getUsers();
+        return getUserBase().getUsers();
     }
     
     @Path("users/{email}")
@@ -50,7 +50,7 @@ public class UserService {
     @Produces(MediaType.APPLICATION_XML)
     public User getUser(@PathParam("email") String email) throws JAXBException, IOException
     {
-        return getDiaryApp().getUsers().getUser(email);
+        return getUserBase().getUsers().getUser(email);
     }
 
     /**
