@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.*;
  * @author Henry
  */
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 public class User implements Serializable {
 
     @XmlElement(name = "email")
@@ -27,6 +28,16 @@ public class User implements Serializable {
     private String name;
     @XmlElement(name = "password")
     private String password;
+    @XmlAttribute(name = "userID")
+    private int userID;
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
     
     public User() {
     }
