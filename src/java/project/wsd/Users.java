@@ -41,4 +41,12 @@ public class Users implements Serializable {
         return null; // Login incorrect. Return null.
     }
     
+    public User getUser(String email){
+       for (User user: list){
+           if(user.getEmail().equals(email))
+               return user;
+       }
+       return null;
+    }
+    
 }
