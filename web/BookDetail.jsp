@@ -10,6 +10,9 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+
+<%String inputDoc = "http://localhost:8080/WSD-2018/rest/textbook/textbookTitle?title="+ request.getParameter("title") ; %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,7 +21,7 @@
     </head>
     <body>
            <!-- Replace the URL value with the location of Textbook.xml on your PC-->
-    <c:import url=".//WEB-INF/Textbook.xml"
+           <c:import url ="./WEB-INF/textbook.xml"
               var="inputDoc" />
 
     <!-- Replace the URL value with the location of main.xsl on your PC-->

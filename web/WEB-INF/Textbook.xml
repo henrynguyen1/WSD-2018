@@ -25,10 +25,7 @@ and open the template in the editor.
     </textbook>
     <textbook bookID="2">
 
-        <title>
-            Black hat Python: Python Programming for hackers and
-            pentesters
-        </title>
+        <title>Black hat Python: Python Programming for hackers and pentesters</title>
         <author>Justin Seitz</author>
 
             <ISBN>1593275900</ISBN>
@@ -45,10 +42,7 @@ and open the template in the editor.
     </textbook>
     <textbook bookID="3">
 
-        <title>
-            Kali Linux Revealed: Mastering the Penetration Testing 
-            Distribution
-        </title>
+        <title>Kali Linux Revealed: Mastering the Penetration Testing Distribution</title>
         <author>Raphael Hertzog</author>
 
             <ISBN>0997615605</ISBN>
@@ -82,7 +76,7 @@ and open the template in the editor.
     </textbook>
     
     <textbook bookID="5">
-        <title>Social Issues in Diagnosis </title>
+        <title>Social Issues in Diagnosis</title>
         <author>Annemarie Goldstein Jutel, Kevin Dew</author>
 
             <ISBN>9781421413006</ISBN>

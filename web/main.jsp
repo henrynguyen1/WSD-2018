@@ -14,19 +14,18 @@
         <title>Main</title>
     </head>
     <body>        
-        <!-- Replace the URL value with the location of Textbook.xml on your PC-->
-    <c:import url="./WEB-INF/Textbook.xml"
-              var="inputDoc" />
+        <c:import url="./WEB-INF/Textbook.xml"
+                  var="inputDoc" />
 
-    <!-- Replace the URL value with the location of main.xsl on your PC-->
-    <c:import url="./main.xsl"
-              var="stylesheet" />
-     
-    <!-- Transform xml inputDoc using stylesheet -->
-    <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-      <x:param name="bgColor"  value="lightgreen" />
-    </x:transform>
 
-        
+        <c:import url="./main.xsl"
+                  var="stylesheet" />
+
+        <!-- Transform xml inputDoc using stylesheet -->
+        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+            <x:param name="bgColor"  value="lightgreen" />
+        </x:transform>
+
+
     </body>
 </html>

@@ -41,5 +41,12 @@ public class Textbooks implements Serializable {
        return null;
     }    
     
+    public Textbook getTextbookT(String title){
+        for (Textbook textbook:list){
+            if(textbook.getTitle().equals(title))
+                return textbook;
+        }
+        return null;
+    }
     
 }

@@ -9,7 +9,6 @@ package project.wsd.rest;
  *
  * @author bsapr
  */
-
 import project.wsd.*;
 import javax.servlet.ServletContext;
 import javax.ws.rs.*;
@@ -19,35 +18,43 @@ import java.io.*;
 
 @Path("/textbook")
 public class TextbookService {
-    
+
     @Context
     private ServletContext application;
-    
+
     private TextbookApplication getTextbookApp() throws JAXBException, IOException {
-    
-        synchronized (application){
-            TextbookApplication textbookApp = (TextbookApplication)application.getAttribute("textbookApp");
+
+        synchronized (application) {
+            TextbookApplication textbookApp = (TextbookApplication) application.getAttribute("textbookApp");
             if (textbookApp == null) {
-            textbookApp = new TextbookApplication();
-            textbookApp.setFilePath(application.getRealPath("WEB-INF/textbook.xml"));
-            application.setAttribute("textbookApp", textbookApp);
-        }
+                textbookApp = new TextbookApplication();
+                textbookApp.setFilePath(application.getRealPath("WEB-INF/textbook.xml"));
+                application.setAttribute("textbookApp", textbookApp);
+            }
             return textbookApp;
+        }
+
     }
-        
-    }
-    
-    @Path("textbooksxxx")
+
+    @Path("textbookID")
     @GET
     @Produces(MediaType.APPLICATION_XML)
-    public Textbook getTextbooks(@QueryParam("bookID")int bookID) throws JAXBException, IOException {
+    public Textbook getTextbooks(@QueryParam("bookID") int bookID) throws JAXBException, IOException {
         return getTextbookApp().getTextbooks().getTextbook(bookID);
     }
+
     @Path("textbooks")
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public Textbooks getTextbook() throws JAXBException, IOException {
-    return getTextbookApp().getTextbooks();
+        return getTextbookApp().getTextbooks();
     }
-    
+
+    @Path("textbookTitle")
+    @GET
+    @Produces(MediaType.APPLICATION_XML)
+    public Textbook getTextbook(@QueryParam("title") String title) throws JAXBException, IOException {
+        return getTextbookApp().getTextbooks().getTextbookT(title);
+    }
+
 }

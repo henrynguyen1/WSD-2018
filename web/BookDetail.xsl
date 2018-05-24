@@ -15,13 +15,13 @@
     <!-- TODO customize transformation rules 
          syntax recommendation http://www.w3.org/TR/xslt 
     -->
-    <xsl:template match="textbook">
+    <xsl:template match="textbooks">
         <html>
             <head>
                 <title>main.xsl</title>
                 <style>
-                    table.book { border: solid 1px black; border-collapse: collapse; }
-                    table.book td { border: solid 1px #999; }
+                    table.textbook { border: solid 1px black; border-collapse: collapse; }
+                    table.textbook td { border: solid 1px #999; }
                 </style>
             </head>
             <body>
@@ -30,9 +30,9 @@
         </html>
     </xsl:template>
     
-    <xsl:template match="book">
+    <xsl:template match="textbook">
         
-        <table class="book">
+        <table class="textbook">
             <thead>
                 <tr>
                     <th>Title</th>
