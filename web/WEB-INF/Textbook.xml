@@ -77,4 +77,17 @@ and open the template in the editor.
             <state>Sold</state>
 
     </textbook>
+    
+    <textbook bookID="6">
+        <title>Violent Python</title>
+        <author>TJ O'connor</author>
+
+            <ISBN> 1597499579</ISBN>
+            <publisher>Syngress</publisher>
+            <date>9/22/2012</date>
+            <abstracts>Violent Python shows you how to move from a theoretical understanding of offensive computing concepts to a practical implementation. </abstracts>
+            <category>IT</category>
+            <state>N</state>
+
+    </textbook>
 </textbooks>
