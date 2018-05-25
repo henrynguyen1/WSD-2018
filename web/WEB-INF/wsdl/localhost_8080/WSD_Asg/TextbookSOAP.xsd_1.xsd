@@ -8,23 +8,21 @@
 
 <xs:element name="fetchBookResponse" type="tns:fetchBookResponse"/>
 
+<xs:element name="fetchBookT" type="tns:fetchBookT"/>
+
+<xs:element name="fetchBookTResponse" type="tns:fetchBookTResponse"/>
+
 <xs:element name="textbook" type="tns:textbook"/>
 
-<xs:element name="textbooks" type="tns:textbooks"/>
-
-<xs:complexType name="fetchBook">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="fetchBookResponse">
+<xs:complexType name="fetchBookT">
 <xs:sequence>
-<xs:element name="return" type="tns:textbooks" minOccurs="0"/>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="textbooks">
+<xs:complexType name="fetchBookTResponse">
 <xs:sequence>
-<xs:element name="textbook" type="tns:textbook" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="tns:textbook" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -40,6 +38,16 @@
 <xs:element name="reservation" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 <xs:attribute name="bookID" type="xs:int" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="fetchBook">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="fetchBookResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:textbook" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="fetchBookID">
