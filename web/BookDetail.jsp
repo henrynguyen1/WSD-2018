@@ -3,26 +3,24 @@
     Created on : 23/05/2018, 3:19:17 PM
     Author     : HenryNguyen
 --%>
-<%@page import="project.wsd.Users"%>
-<%@page import="project.wsd.User"%>
+<%@page import="java.net.URLEncoder"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 
-<%String inputDoc = "http://localhost:8080/WSD-2018/rest/textbook/textbookTitle?title="+ request.getParameter("title") ; %>
-
+<%String title = request.getParameter("title") == null ? "" : URLEncoder.encode(request.getParameter("title"), "UTF-8").replace("+", "%20"); %>
+<% String xml = "http://localhost:8080/WSD-2018/rest/textbook/textbookTitle?title="+ title; %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    <h1>Book Details</h1>
+        <title>Book Details <%= title %> </title>
+    <h1>Book Details <%=title%></h1>
     </head>
     <body>
            <!-- Replace the URL value with the location of Textbook.xml on your PC-->
-           <c:import url ="./WEB-INF/textbook.xml"
-              var="inputDoc" />
+           <c:import url="<%=xml%>" var="inputDoc" />
 
     <!-- Replace the URL value with the location of main.xsl on your PC-->
     <c:import url=".//BookDetail.xsl"
