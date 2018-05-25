@@ -15,7 +15,7 @@
     <!-- TODO customize transformation rules 
          syntax recommendation http://www.w3.org/TR/xslt 
     -->
-    <xsl:template match="textbooks">
+    <xsl:template match="/">
         <html>
             <head>
                 <title>main.xsl</title>
@@ -33,31 +33,27 @@
     <xsl:template match="textbook">
         
         <table class="textbook">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Category</th>
-                    <th>Abstract</th>
-                    <th>ISBN</th>
-                    <th>Publisher</th>
-                    <th>Date</th>
-                    <th>Reserve</th>
-                    <th>Purchase</th>
-                </tr>
-            </thead>
+
             <tbody>
+                <tr>
+                <td>Title</td>
                 <td width="400px"> 
-                    <a href=""> <!--/bookDetails?id=<xsl:apply-templates select="id"/> -->
                         <xsl:apply-templates select="title"/>
-                    </a>
-                </td>  
+                   
+                </td>
+                </tr>  
+                <tr>
+                    <td>Author</td>
                 <td width="100px">
                     <xsl:apply-templates select="author"/>
                 </td>
+                </tr>
+                <tr>
+                    <td>Category</td>
                 <td>
                     <xsl:apply-templates select=".//category"/>
                 </td>
+                </tr>
                 <td>
                     <a href="http://localhost:8080/Project/reserve?id={@bookID}">Reserve</a>
                 </td>
