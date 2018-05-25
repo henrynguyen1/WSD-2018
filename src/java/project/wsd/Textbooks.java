@@ -21,7 +21,7 @@ public class Textbooks implements Serializable {
     private ArrayList<Textbook> list = new ArrayList<Textbook>();
     
     
-    private ArrayList<Textbook> getList(){
+    public ArrayList<Textbook> getList(){
     return list;
     }
     

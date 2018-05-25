@@ -41,8 +41,11 @@ public class TextbookSOAP {
         }
     }
 
-    public Textbooks fetchBook()  {
-        return getBookApp().getTextbooks();
+    public List<Textbook> fetchBook()  {
+        List<Textbook> books = new ArrayList<Textbook>();
+        
+        books = getBookApp().getTextbooks().getList();   
+        return books;
     }
     
     public List<Textbook> fetchBookID(int ID){
@@ -53,6 +56,16 @@ public class TextbookSOAP {
             books.add(book);
         }
         
+        return books;
+    }
+    
+    public List<Textbook> fetchBookT(String title){
+        List<Textbook> books = new ArrayList<Textbook>();
+        Textbook book = getBookApp().getTextbooks().getTextbookT(title);
+        if (book != null)
+        {
+            books.add(book);
+        }
         return books;
     }
 }
