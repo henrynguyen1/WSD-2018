@@ -40,4 +40,64 @@
                 JAX-WS WSIMPORT SECTION
                 ===================
             -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-TextbookSOAP" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TextbookSOAP"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TextbookSOAP" destdir="${build.generated.dir}/jax-wsCache/TextbookSOAP" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSD_Asg/TextbookSOAP?wsdl" xnocompile="true" xendorsed="true" package="project.wsd.soap.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TextbookSOAP"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TextbookSOAP">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TextbookSOAP" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/project/wsd/soap/client"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TextbookSOAP"/>
+    </target>
+    <target name="wsimport-client-UserSOAP" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/UserSOAP"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UserSOAP" destdir="${build.generated.dir}/jax-wsCache/UserSOAP" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD_Asg/UserSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSD_Asg/UserSOAP?wsdl" xnocompile="true" xendorsed="true" package="project.wsd.soap.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD_Asg/UserSOAP.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/UserSOAP"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/UserSOAP">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-UserSOAP" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/project/wsd/soap/client"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/UserSOAP"/>
+    </target>
+    <target name="wsimport-client-TextbookSOAP_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1" destdir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP_1/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSD_Asg/TextbookSOAP?wsdl" xnocompile="true" xendorsed="true" package="project.wsd.soap.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP_1/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TextbookSOAP_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/project/wsd/soap/client"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-TextbookSOAP, wsimport-client-UserSOAP, wsimport-client-TextbookSOAP_1"/>
 </project>
