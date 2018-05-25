@@ -47,7 +47,7 @@
             </thead>
             <tbody>
                 <td width="400px"> 
-                    <a href="./BookDetail.jsp?{title}"> <!--/bookDetails?id=<xsl:apply-templates select="id"/> -->
+                    <a href="./BookDetail.jsp?title={title}"> <!--/bookDetails?id=<xsl:apply-templates select="id"/> -->
                         <xsl:apply-templates select="title"/>
                     </a>
                 </td>  
