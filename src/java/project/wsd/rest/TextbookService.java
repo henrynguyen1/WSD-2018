@@ -15,6 +15,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import javax.xml.bind.JAXBException;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Path("/textbook")
 public class TextbookService {
@@ -53,8 +55,16 @@ public class TextbookService {
     @Path("textbookTitle")
     @GET
     @Produces(MediaType.APPLICATION_XML)
-    public Textbook getTextbook(@QueryParam("title") String title) throws JAXBException, IOException {
-        return getTextbookApp().getTextbooks().getTextbookT(title);
+    public List<Textbook> getTextbook(@QueryParam("title") String title) throws JAXBException, IOException {
+        //return getTextbookApp().getTextbooks().getTextbookT(title);
+        List<Textbook> books = new ArrayList<Textbook>();
+        
+        Textbook book = getTextbookApp().getTextbooks().getTextbookT(title);
+        if (book != null) {
+            books.add(book);
+        }
+        
+        return books;
     }
 
 }
