@@ -6,6 +6,8 @@
 package project.wsd.soap;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -16,7 +18,6 @@ import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
 import project.wsd.*;
 
-
 /**
  *
  * @author Anh Minh Tran
@@ -26,8 +27,8 @@ public class TextbookSOAP {
 
     @Resource
     private WebServiceContext context;
-    
-    private TextbookApplication getBookApp() throws JAXBException, IOException, Exception {
+
+    private TextbookApplication getBookApp() {
         ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
         synchronized (application) {
             TextbookApplication bookApp = (TextbookApplication) application.getAttribute("bookApp");
@@ -39,8 +40,19 @@ public class TextbookSOAP {
             return bookApp;
         }
     }
+
+    public Textbooks fetchBook()  {
+        return getBookApp().getTextbooks();
+    }
     
-    public Textbooks fetchBook() throws IOException, Exception{
-        return getBookApp().getTextbooks();        
-}
+    public List<Textbook> fetchBookID(int ID){
+        List<Textbook> books = new ArrayList<Textbook>();
+        
+        Textbook book = getBookApp().getTextbooks().getTextbook(ID);
+        if (book != null) {
+            books.add(book);
+        }
+        
+        return books;
+    }
 }
