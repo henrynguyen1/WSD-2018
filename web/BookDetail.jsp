@@ -31,7 +31,12 @@
       <x:param name="bgColor"  value="lightgreen" />
     </x:transform>
     
+    <form action = "Reservation.jsp">        
+             <tr>
+                <td>Reserve Book</td>
+                <td><input type="submit" value="reserve"> </td>
+            </tr>
 
-    
+    </form>
 </body>
 </html>

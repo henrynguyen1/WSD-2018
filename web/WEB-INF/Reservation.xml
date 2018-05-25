@@ -8,21 +8,19 @@ and open the template in the editor.
 
 <reservations>
     <reservation id="123" userId="abc" bookId="def"/>
-    <ReservationID>
-    <Username>MJ23</Username>
+    <reservationID>
+        <username>MJ23</username>
         <email>mjordan@gmail.com </email>
-        <book>
-            <title>Violent Python</title>
-        </book>
-    </ReservationID>
- </Reservation>
-<Reservation>
-    <ReservationID>
-    <Username>KB24</Username>
+        <title>Violent Python</title>
+        <textbook bookID="1"></textbook> 
+    </reservationID>
+</reservation>
+<reservation>
+    <reservationID>
+        <username>KB24</username>
         <email>kbryant24@gmail.com </email>
-        <book>
-            <title>Kali Linux Revealed: Mastering the Penetration Testing 
-            Distribution</title>
-        </book>
-    </ReservationID>
- </reservations>
+        <title>Kali Linux Revealed: Mastering the Penetration Testing 
+                     Distribution</title>
+        <textbook bookID="3"></textbook> 
+    </reservationID>
+</reservations>

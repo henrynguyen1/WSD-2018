@@ -4,6 +4,7 @@
     Author     : Henry
 --%>
 
+<%@page import="project.wsd.ListerApplication"%>
 <%@page import="project.wsd.User"%>
 <%@page import="project.wsd.Users"%>
 <!DOCTYPE html>
@@ -14,14 +15,14 @@
     </head>
     <body>
         <% String filePath = application.getRealPath("WEB-INF/users.xml"); %>
-<jsp:useBean id="bookApp" class="project.wsd.bookApplication" scope="application">
-    <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
+<jsp:useBean id="listApp" class="project.wsd.ListerApplication" scope="application">
+    <jsp:setProperty name="ListerApplication" property="filePath" value="<%=filePath%>"/>
 </jsp:useBean>
         <%
         String email = request.getParameter("email");
         String password = request.getParameter("password");
     
-    Users users = bookApp.getUsers();
+    Users users = listApp.getUsers();
     User user = users.login(email, password);
         
          if (user != null)
