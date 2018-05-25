@@ -27,6 +27,14 @@
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </wsgen>
     </target>
+    <target name="wsgen-UserSOAP" depends="wsgen-init">
+        <copy todir="${build.classes.dir}/META-INF">
+            <fileset dir="${webinf.dir}" includes="wsit-project.wsd.soap.UserSOAP.xml"/>
+        </copy>
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="project.wsd.soap.UserSOAP" xendorsed="true">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </wsgen>
+    </target>
     <!--
                 ===================
                 JAX-WS WSIMPORT SECTION
@@ -59,5 +67,37 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/project/wsd/soap/client"/>
         <delete dir="${build.generated.dir}/jax-wsCache/TextbookSOAP"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-TextbookSOAP"/>
+    <target name="wsimport-client-UserSOAP" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/UserSOAP"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UserSOAP" destdir="${build.generated.dir}/jax-wsCache/UserSOAP" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD_Asg/UserSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSD_Asg/UserSOAP?wsdl" xnocompile="true" xendorsed="true" package="project.wsd.soap.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD_Asg/UserSOAP.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/UserSOAP"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/UserSOAP">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-UserSOAP" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/project/wsd/soap/client"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/UserSOAP"/>
+    </target>
+    <target name="wsimport-client-TextbookSOAP_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1" destdir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP_1/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSD_Asg/TextbookSOAP?wsdl" xnocompile="true" xendorsed="true" package="project.wsd.soap.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP_1/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TextbookSOAP_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/project/wsd/soap/client"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TextbookSOAP_1"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-TextbookSOAP, wsimport-client-UserSOAP, wsimport-client-TextbookSOAP_1"/>
 </project>

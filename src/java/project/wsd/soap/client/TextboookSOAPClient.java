@@ -12,10 +12,12 @@ import java.util.Scanner;
  *
  * @author Anh Minh Tran
  */
-public class TextboookSOAPClient {
 
+public class TextboookSOAPClient {
+        Boolean loggedin;
     public static void main(String[] args) throws Throwable {
         Scanner scanner = new Scanner(System.in);
+        Boolean loggedin;
 
         while (true) {
 
@@ -29,7 +31,7 @@ public class TextboookSOAPClient {
 
             switch (input.toLowerCase().charAt(0)) {
                 case 'a':
-                    //BookSOAP.addUser();
+                    Login();
                     break;
                 case 'd':
                     //BookSOAP.deleteUser();
@@ -74,6 +76,26 @@ public class TextboookSOAPClient {
                 break;
             }
 
+        }
+    }
+    
+    private static void Login(){
+        UserSOAP_Service locator = new UserSOAP_Service();
+        UserSOAP userSOAP = locator.getUserSOAPPort();
+        String email, pass;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter email: ");
+        email = scanner.nextLine();
+        System.out.println("Enter password: ");
+        pass = scanner.nextLine();
+        User user = userSOAP.getUsersDetail(email, pass);
+        if (user != null)
+        {
+            System.out.println("Working");
+        }
+        else
+        {
+            System.out.println("Nope");
         }
     }
 
