@@ -18,52 +18,79 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>main.xsl</title>
+                <title>BookDetail.xsl</title>
                 <style>
-                    table.textbook { border: solid 1px black; border-collapse: collapse; }
+                    table.textbook {  border-collapse: collapse; }
                     table.textbook td { border: solid 1px #999; }
                 </style>
             </head>
             <body>
+                 
                 <xsl:apply-templates/>
             </body>
         </html>
     </xsl:template>
     
     <xsl:template match="textbook">
-        
-        <table class="textbook">
+            <table width="500" class="textbook">
+                <tbody>
 
-            <tbody>
-                <tr>
-                <td>Title</td>
-                <td width="400px"> 
-                        <xsl:apply-templates select="title"/>
+
+                    <tr>
+                        <td>
+                            Please Select <u>ONE</u> option:
+                        </td>
+                        <td>
+                            <input type="checkbox" name="bookID" value="{@bookID}"/>
+                        </td>
+                    </tr>                
+                    <tr>
+                        <td>Title</td>
+                        <td width="400px"> 
+                            <xsl:apply-templates select="title"/>
                    
-                </td>
-                </tr>  
-                <tr>
-                    <td>Author</td>
-                <td width="100px">
-                    <xsl:apply-templates select="author"/>
-                </td>
-                </tr>
-                <tr>
-                    <td>Category</td>
-                <td>
-                    <xsl:apply-templates select=".//category"/>
-                </td>
-                </tr>
-                <td>
-                    <a href="http://localhost:8080/Project/reserve?id={@bookID}">Reserve</a>
-                </td>
-                <td>
-                    <a href="http://localhost:8080/Project/purchase?id={@purchaseID}">Purchase</a>
-                </td>
-                
-            </tbody>
-        </table>
-        
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>Author</td>
+                        <td>
+                            <xsl:apply-templates select="author"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ISBN</td>
+                        <td>
+                            <xsl:apply-templates select="ISBN"/>
+                        </td>
+                        <tr>
+                            <td>Publisher</td>
+                            <td>
+                                <xsl:apply-templates select="publisher"/>
+                            </td>
+                            <tr>
+                                <td>Date Published</td>
+                                <td>
+                                    <xsl:apply-templates select="date"/>
+                                </td>
+                            </tr>
+                        </tr>
+                    </tr>
+                    <tr>
+                        <td>Abstract</td>
+                        <td>
+                            <xsl:apply-templates select="abstracts"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td>
+                            <xsl:apply-templates select=".//category"/>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+     
         
     </xsl:template>
    

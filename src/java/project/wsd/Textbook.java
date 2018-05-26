@@ -6,6 +6,7 @@
 package project.wsd;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 
@@ -128,6 +129,15 @@ this.reservation = reservation;
 
     public void setReservation(String reservation) {
         this.reservation = reservation;
+    }
+    
+    @Override
+    public boolean equals(Object other){
+        return other instanceof Textbook && ((Textbook) other).title.equals(title);
+    }
+    @Override
+    public int hashCode(){
+        return Objects.hash(title);
     }
 
 

@@ -7,20 +7,12 @@ and open the template in the editor.
 
 
 <reservations>
-    <reservation id="123" userId="abc" bookId="def"/>
-    <reservationID>
+    <reservation resID="1" bookID="4">
         <username>MJ23</username>
         <email>mjordan@gmail.com </email>
-        <title>Violent Python</title>
-        <textbook bookID="1"></textbook> 
-    </reservationID>
-</reservation>
-<reservation>
-    <reservationID>
+    </reservation>
+    <reservation resID="2" bookID="2">
         <username>KB24</username>
         <email>kbryant24@gmail.com </email>
-        <title>Kali Linux Revealed: Mastering the Penetration Testing 
-                     Distribution</title>
-        <textbook bookID="3"></textbook> 
-    </reservationID>
+    </reservation>
 </reservations>
