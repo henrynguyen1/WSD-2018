@@ -14,36 +14,25 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement()
 public class Reservation implements Serializable{
-    @XmlElement(name = "reservationID")
-    private String reservationID;
+    
     @XmlElement(name = "username")
     private String username;
     @XmlElement(name = "email")
     private String email;
-    @XmlElement(name = "title")
-    private String title;
-    @XmlElement(name = "bookID")
+    @XmlAttribute(name = "bookID")
     private int bookID;
+    @XmlAttribute(name = "resID")
+    private int resID;
     
     public Reservation(){
         
     }
-    public Reservation(String reservationID, String username, String email, String title){
-        this.reservationID = reservationID;
+
+    public Reservation(String username, String email, int bookID, int resID) {
         this.username = username;
         this.email = email;
-        this.title = title;
-        
-       
-        
-    }
-
-    public String getReservationID() {
-        return reservationID;
-    }
-
-    public void setReservationID(String reservationID) {
-        this.reservationID = reservationID;
+        this.bookID = bookID;
+        this.resID = resID;
     }
 
     public String getUsername() {
@@ -62,14 +51,6 @@ public class Reservation implements Serializable{
         this.email = email;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public int getBookID() {
         return bookID;
     }
@@ -77,5 +58,14 @@ public class Reservation implements Serializable{
     public void setBookID(int bookID) {
         this.bookID = bookID;
     }
-            
+
+    public int getResID() {
+        return resID;
+    }
+
+    public void setResID(int resID) {
+        this.resID = resID;
+    }
+
+
 }

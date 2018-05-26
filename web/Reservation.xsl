@@ -75,12 +75,25 @@
                     <tr>
                         <td>Category</td>
                         <td>
-                            <xsl:apply-templates select=".//category"/>
+                            <xsl:apply-templates select="category"/>
                         </td>
-                    </tr>            
+                    </tr>
+                    <tr>
+                    <td>Condition</td>
+                        <td>
+                            <xsl:apply-templates select="condition"/>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td>Lister</td>
+                        <td>
+                            <xsl:apply-templates select="lister"/>
+                        </td>
+                    </tr>
+                                
                 </tbody>
             </table>
-     
+            <p><input type="radio" value="{bookID}" checked=""/></p>
         
     </xsl:template>
 

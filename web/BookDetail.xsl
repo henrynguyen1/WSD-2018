@@ -87,6 +87,18 @@
                             <xsl:apply-templates select=".//category"/>
                         </td>
                     </tr>
+                    <tr>
+                        <td>Condition</td>
+                        <td>
+                            <xsl:apply-templates select=".//condition"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lister</td>
+                        <td>
+                            <xsl:apply-templates select="lister"/>
+                        </td>
+                    </tr>
                     
                 </tbody>
             </table>

@@ -49,8 +49,8 @@ return getReserveApp().getReservations();
 @Path("reservationID")
 @GET
 @Produces(MediaType.APPLICATION_XML)
-public Reservation getReservation(@QueryParam("reservationID") String reservationID) throws JAXBException, IOException {
-    return getReserveApp().getReservations().getReservation(reservationID);
+public Reservation getReservation(@QueryParam("reservationID") int resID) throws JAXBException, IOException {
+    return getReserveApp().getReservations().getReservation(resID);
 }
 }
 

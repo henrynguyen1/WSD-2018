@@ -10,13 +10,14 @@ and open the template in the editor.
     <textbook bookID="1">
         <title>Violent Python</title>
         <author>TJ O'connor</author>
-
         <ISBN> 1597499579</ISBN>
         <publisher>Syngress</publisher>
         <date>9/22/2012</date>
         <abstracts>Violent Python shows you how to move from a theoretical understanding of offensive computing concepts to a practical implementation. </abstracts>
         <category>IT</category>
-        <state>N</state>
+        <reservation>No</reservation>
+        <condition>new</condition>
+        <lister>Michael Nguyen</lister>
 
     </textbook>
     <textbook bookID="2">
@@ -31,7 +32,9 @@ and open the template in the editor.
             In Black Hat Python, the latest from Justin Seitz (author of the best-selling Gray Hat Python),you’ll explore the  darker side of Python.
         </abstracts>
         <category>IT</category>
-        <state>N</state>
+        <reservation>yes</reservation>
+        <condition>fair</condition>
+        <lister>Michael Nguyen</lister>
 
     </textbook>
     <textbook bookID="3">
@@ -42,11 +45,11 @@ and open the template in the editor.
         <ISBN>0997615605</ISBN>
         <publisher>Offsec Press</publisher>
         <date>06/05/2017</date>
-        <abstracts>
-            In this book, we'll focus on the Kali Linux platform itself, and help you understand and maximize Kali from the ground up.
-        </abstracts>
+        <abstracts>In this book, we'll focus on the Kali Linux platform itself, and help you understand and maximize Kali from the ground up.</abstracts>
         <category>IT</category>
-        <state>N</state>
+        <reservation>no</reservation>
+        <condition>good</condition>
+        <lister>Michael Nguyen</lister>
 
     </textbook>
     <textbook bookID="4">
@@ -57,11 +60,11 @@ and open the template in the editor.
         <ISBN>0538481196</ISBN>
         <publisher>Cengage Learning</publisher>
         <date>2011</date>
-        <abstracts>
-            Based on the comprehensive two-semester text by the same authors, this version of Economics boils down the formal economic theories and concepts into their essential parts, emphasizing  domestic and international applications and policy issues. 
-        </abstracts>
+        <abstracts>Based on the comprehensive two-semester text by the same authors, this version of Economics boils down the formal economic theories and concepts into their essential parts, emphasizing  domestic and international applications and policy issues. </abstracts>
         <category>Business</category>
-        <state>N</state>
+        <reservation>yes</reservation>
+        <condition>poor</condition>
+        <lister>Joel Miller</lister>
 
     </textbook>
     
@@ -74,7 +77,9 @@ and open the template in the editor.
         <date>2014</date>
         <abstracts>Diagnosis, the classification tool of medicine, serves an important social role. It confers social status on those who diagnose, and it impacts the social status of those diagnosed. Studying diagnosis from a sociological perspective offers clinicians and students a rich and sometimes provocative view of medicine and the cultures in which it is practiced. Social Issues in Diagnosis describes how diagnostic labels and the process of diagnosis are anchored in groups and structures as much as they are in the interactions between patient and doctor.</abstracts>
         <category>Medical</category>
-        <state>Sold</state>
+        <reservation>no</reservation>
+        <condition>new</condition>
+        <lister>Tweeny Scott</lister>
 
     </textbook>
     
@@ -87,7 +92,9 @@ and open the template in the editor.
         <date>9/22/2012</date>
         <abstracts>Violent Python shows you how to move from a theoretical understanding of offensive computing concepts to a practical implementation. </abstracts>
         <category>IT</category>
-        <state>N</state>
+        <reservation>no</reservation>
+        <condition>new</condition>
+        <lister>Troy Baker</lister>
 
     </textbook>
 </textbooks>

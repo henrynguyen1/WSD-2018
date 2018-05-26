@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-    Document   : Textbook.xsl
-    Created on : 7 May 2018, 1:41 PM
-    Author     : Anh Minh Tran
+    Document   : main2.xsl
+    Created on : May 26, 2018, 11:56 PM
+    Author     : bsapr
     Description:
         Purpose of transformation follows.
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html"/>
-    <xsl:param name="bgColor"/>
 
     <!-- TODO customize transformation rules 
          syntax recommendation http://www.w3.org/TR/xslt 
     -->
-            
-       
-    
-    
-    <xsl:template match="/">
+<xsl:template match="/">
         <html>
             <head>
                 <title>main.xsl</title>
@@ -43,6 +38,8 @@
                     <th>Author</th>
                     <th>Category</th>
                     <th>Reservation</th>
+                    <th>No. of books</th>
+                    <th>Delete</th>
                     
                 </tr>
             </thead>
@@ -61,6 +58,12 @@
                 <td>
                     <xsl:apply-templates select="reservation"/>
                 </td>
+                <td>
+                    <xsl:value-of select="count(textbook[title])"/>
+                </td>
+                <td>
+                    <a href= "mainAction.jsp?delete={@bookID}">Delete</a>
+                </td>
               
                 
             </tbody>
@@ -68,10 +71,4 @@
         
         
     </xsl:template>
-   
-  
- 
-    
-
-
 </xsl:stylesheet>

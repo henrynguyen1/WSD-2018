@@ -4,20 +4,20 @@
  * and open the template in the editor.
  */
 package project.wsd;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
-
 /**
  *
  * @author HenryNguyen
  */
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement()
-public class Textbook implements Serializable {    
+public class Textbook implements Serializable {
+
     @XmlElement(name = "title")
     private String title;
     @XmlElement(name = "author")
@@ -36,28 +36,36 @@ public class Textbook implements Serializable {
     private String reservation;
     @XmlAttribute(name = "bookID")
     private int bookID;
+    @XmlElement(name = "lister")
+    private String lister;
+    @XmlElement(name = "condition")
+    private String condition;
 
-public Textbook(){
+    public Textbook() {
 
-}
+    }
 
-public Textbook(String title, String author, String ISBN, String publisher, String abstracts, String category, String reservation) {
+    public Textbook(String title, String author, String ISBN, String publisher, String date, String abstracts, String category, String reservation, int bookID, String lister, String condition) {
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+        this.publisher = publisher;
+        this.date = date;
+        this.abstracts = abstracts;
+        this.category = category;
+        this.reservation = reservation;
+        this.bookID = bookID;
+        this.lister = lister;
+        this.condition = condition;
+    }
 
+    public String getLister() {
+        return lister;
+    }
 
-this.title = title;
-this.author = author;
-this.ISBN = ISBN;
-this.publisher = publisher;
-this.abstracts = abstracts;
-this.category = category;
-this.reservation = reservation;
-}
-
-
-
-
-
-
+    public void setLister(String lister) {
+        this.lister = lister;
+    }
 
     public int getBookID() {
         return bookID;
@@ -66,7 +74,7 @@ this.reservation = reservation;
     public void setBookID(int bookID) {
         this.bookID = bookID;
     }
-    
+
     public String getTitle() {
         return title;
     }
@@ -130,16 +138,15 @@ this.reservation = reservation;
     public void setReservation(String reservation) {
         this.reservation = reservation;
     }
-    
+
     @Override
-    public boolean equals(Object other){
+    public boolean equals(Object other) {
         return other instanceof Textbook && ((Textbook) other).title.equals(title);
     }
+
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return Objects.hash(title);
     }
-
-
 
 }

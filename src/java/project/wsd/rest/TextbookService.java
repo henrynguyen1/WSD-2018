@@ -45,7 +45,14 @@ public class TextbookService {
     @Path("filter")
     @GET
     @Produces(MediaType.APPLICATION_XML)
-    public List<Textbook> getTest(@QueryParam("title") String title, @QueryParam("bookID") int bookID, @QueryParam("unique") String unique) throws JAXBException, IOException{
+    public List<Textbook> getTest(
+            @QueryParam("title") String title, 
+            @QueryParam("bookID") int bookID, 
+            @QueryParam("unique") String unique,
+            @QueryParam("lister") String lister,
+            @QueryParam("category") String category
+    )
+            throws JAXBException, IOException{
         List<Textbook> values = getTextbookApp().getTextbooks().getList();
         if(title !=null){
         values = values.stream().filter(new Predicate<Textbook>() {
@@ -64,6 +71,15 @@ public class TextbookService {
                 }
             }).collect(Collectors.toList());
         }
+         if(lister !=null){
+             values = values.stream().filter(new Predicate<Textbook>() {
+                 @Override
+                 public boolean test(Textbook p) {
+                     return p.getLister().equals(lister);
+                 }
+             }).collect(Collectors.toList());
+         }
+         
           if (unique != null) {
             Set<Textbook> uniqueValues = new HashSet<>();
             uniqueValues.addAll(values);
