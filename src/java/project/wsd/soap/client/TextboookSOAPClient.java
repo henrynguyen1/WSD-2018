@@ -14,13 +14,11 @@ import java.util.Scanner;
  */
 
 public class TextboookSOAPClient {
-        Boolean loggedin;
+        private static Boolean loggedin;
     public static void main(String[] args) throws Throwable {
         Scanner scanner = new Scanner(System.in);
-        Boolean loggedin;
-
+        loggedin = false;
         while (true) {
-
             printOptions();
 
             String input = scanner.nextLine();
@@ -33,12 +31,17 @@ public class TextboookSOAPClient {
                 case 'a':
                     Login();
                     break;
-                case 'd':
-                    //BookSOAP.deleteUser();
+                case 'b':
+                    loggedin = false;
                     break;
                 case 'c':
                     DisplayBook();
                     break;
+                case 'd':
+                    if (loggedin == true)
+                        System.out.println("Listing");
+                    else
+                        System.out.println("Have to log in");
                 default:
                     System.out.println("Sorry, didn't understand your input.");
                     break;
@@ -92,6 +95,7 @@ public class TextboookSOAPClient {
         if (user != null)
         {
             System.out.println("Working");
+            loggedin= true;
         }
         else
         {
@@ -101,9 +105,11 @@ public class TextboookSOAPClient {
 
     private static void printOptions() {
         String[] options = {
-            "A --> Add user",
-            "D --> Delete user",
-            "C --> Show all books"
+            "A --> Login",
+            "B --> Log out",
+            "C --> Show all books",
+            "D --> List a book"
+            
         };
 
         for (String option : options) {
