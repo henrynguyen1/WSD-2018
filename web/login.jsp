@@ -16,8 +16,8 @@
         <form action="loginAction.jsp" method ="post">
         <table>
             <tr>
-                <td>Username</td>
-                <td><input type ="text" name="Username"> </td>
+                <td>Email</td>
+                <td><input type ="text" name="Email"> </td>
             </tr>
             <tr>
                 <td>Password</td>
@@ -28,14 +28,9 @@
                 <td><input type ="submit" name="login"> </td>
             </tr>
             </form>
-</table>
-            <form action ="register.jsp" method= "post">
-                <table>
-            <tr>
-                <td>Register</td>
-                <td><input type="submit" value="register"> </td>
-            </tr>
         </table>
+            
+       
         </form>
     </body>
 </html>
