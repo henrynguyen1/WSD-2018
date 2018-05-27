@@ -27,6 +27,7 @@ public class TextbookSOAP {
 
     @Resource
     private WebServiceContext context;
+    private static TextbookApplication bookA;
 
     private TextbookApplication getBookApp() {
         ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
@@ -36,6 +37,7 @@ public class TextbookSOAP {
                 bookApp = new TextbookApplication();
                 bookApp.setFilePath(application.getRealPath("WEB-INF/Textbook.xml"));
                 application.setAttribute("bookApp", bookApp);
+                bookA = bookApp;
             }
             return bookApp;
         }
@@ -67,5 +69,21 @@ public class TextbookSOAP {
             books.add(book);
         }
         return books;
+    }
+    
+    public void addBook(String title, String author, String ISBN, String publisher, String abstracts, String category, String reservation){
+        ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
+        String filePath = application.getRealPath("WEB-INF/Textbook.xml") ;
+        Textbook textbook = new Textbook();
+        
+        textbook.setAuthor(author);
+        textbook.setTitle(title);
+        textbook.setISBN(ISBN);
+        textbook.setPublisher(publisher);
+        textbook.setAbstracts(abstracts);
+        textbook.setCategory(category);
+        textbook.setReservation(reservation);
+        bookA.updateXML(textbook, filePath);
+        
     }
 }
