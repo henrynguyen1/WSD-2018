@@ -28,6 +28,8 @@
     <!-- Transform xml inputDoc using stylesheet -->
     <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
     </x:transform>
+    
+    <form action="ReserveAction.jsp" method ="post">
         <table>
             <tr>
                 <td>Name</td>
@@ -39,6 +41,7 @@
             </tr>
              <tr>
                  <td>Submit Reservation</td>
-                 <td><input type = "submit" name  = "register"> </td>
+                 <td><input type = "submit" name  = "Register"> </td>
+                 </form>
     </body>
 </html>
