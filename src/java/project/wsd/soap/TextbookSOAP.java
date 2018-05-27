@@ -71,7 +71,7 @@ public class TextbookSOAP {
         return books;
     }
     
-    public void addBook(String title, String author, String ISBN, String publisher, String abstracts, String category, String reservation){
+    public void addBook(String title, String author, String ISBN, String publisher, String abstracts, String category, String reservation) throws Exception{
         ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
         String filePath = application.getRealPath("WEB-INF/Textbook.xml") ;
         Textbook textbook = new Textbook();
@@ -83,7 +83,9 @@ public class TextbookSOAP {
         textbook.setAbstracts(abstracts);
         textbook.setCategory(category);
         textbook.setReservation(reservation);
-        bookA.updateXML(textbook, filePath);
+        Textbooks textbooks = new Textbooks(); 
+        textbooks.addTextbook(textbook);
+        bookA.updateXML(textbooks, filePath);
         
     }
 }
