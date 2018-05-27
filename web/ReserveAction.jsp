@@ -18,7 +18,7 @@
         <jsp:useBean id="reserveApp" class="project.wsd.ReserveApplication" scope="application">
             <jsp:setProperty name="reserveApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
-         <jsp:useBean id="flightApp" class="project.wsd.ReserveApplication"> 
+         <jsp:useBean id="reserveApp" class="project.wsd.ReserveApplication"> 
         
              <%
                String username = request.getParameter("Username");
