@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package project.wsd;
+
 import java.io.*;
 import javax.xml.bind.*;
 
@@ -12,18 +13,19 @@ import javax.xml.bind.*;
  * @author Henry
  */
 public class TextbookApplication implements Serializable {
-     private String filePath;
-     private Textbooks textbooks;
-     
-     public TextbookApplication(String filePath, Textbooks textbooks){
-    this.filePath = filePath;
-    this.textbooks = textbooks;
-}
-     
-     public TextbookApplication(){
-}
-     
-     public String getFilePath() {
+
+    private String filePath;
+    private Textbooks textbooks;
+
+    public TextbookApplication(String filePath, Textbooks textbooks) {
+        this.filePath = filePath;
+        this.textbooks = textbooks;
+    }
+
+    public TextbookApplication() {
+    }
+
+    public String getFilePath() {
         return filePath;
     }
 
@@ -45,8 +47,6 @@ public class TextbookApplication implements Serializable {
         }
     }
 
-
-    
     public void updateXML(Textbooks textbooks, String filePath) throws Exception {
         this.textbooks = textbooks;
         this.filePath = filePath;
@@ -57,8 +57,7 @@ public class TextbookApplication implements Serializable {
         m.marshal(textbooks, fout);
         fout.close();
     }
-    
-    
+
     public void saveTextbooks() throws JAXBException, IOException {
         JAXBContext jc = JAXBContext.newInstance(Textbooks.class);
         Marshaller m = jc.createMarshaller();
@@ -68,6 +67,10 @@ public class TextbookApplication implements Serializable {
         fout.close();
     }
     
+    public void removeTextbook(){
+        
+    }
+
     public Textbooks getTextbooks() {
         return textbooks;
     }
@@ -75,7 +78,5 @@ public class TextbookApplication implements Serializable {
     public void setTextbook(Textbooks textbooks) {
         this.textbooks = textbooks;
     }
-    
 
 }
-
