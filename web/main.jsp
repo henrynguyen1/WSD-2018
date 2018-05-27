@@ -26,7 +26,17 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
         User user = (User)session.getAttribute("user");
         %>
     <body>
-        <%if(user!=null){ %>        
+        <%if(user!=null){ %>
+        <table align="right">
+             <tr>
+                <td>
+                    You are logged in as <%= user.getName() %>
+                </td>
+                <td>
+                    <a href="logout.jsp">Logout </a>
+                </td>
+            </tr>
+        </table>        
         <c:import url="<%=xml%>"
                   var="inputDoc" />
 
@@ -38,6 +48,19 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
         </x:transform>
         <%} else{ %>
+        <table align="right">
+            <tr>
+                <td>
+                    You are not logged in
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   Click <a href="login.jsp">here</a> to Login.
+                   
+                </td>
+            </tr>
+        </table>
         <c:import url= "<%= xml %>"
                   var="inputDoc" />
 

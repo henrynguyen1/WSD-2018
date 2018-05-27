@@ -18,7 +18,7 @@ public class Reservations implements Serializable{
     private ArrayList<Reservation> list = new ArrayList<Reservation>();
     
     
-    private ArrayList<Reservation> getList(){
+    public ArrayList<Reservation> getList(){
     return list;
     }
     

@@ -6,10 +6,12 @@
 package project.wsd;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 /**
  *
@@ -52,6 +54,18 @@ public void setFilePath(String filePath) {//throws JAXBException, FileNotFoundEx
             }
         }
     }
+public void updateXML(Reservations reservations, String filePath) throws Exception {
+        this.reservations = reservations;
+        this.filePath = filePath;
+        JAXBContext jc = JAXBContext.newInstance(Textbooks.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePath);
+        m.marshal(reservations, fout);
+        fout.close();
+    }
+
+
 public Reservations getReservations() {
         return reservations;
     }

@@ -24,7 +24,7 @@
             <head>
                 <title>main.xsl</title>
                 <style>
-                    table.textbook { border: solid 1px black; border-collapse: collapse; }
+                    table.textbook { border: solid 1px black; border-collapse: collapse; align="center" }
                     table.textbook td { border: solid 1px #999; }
                 </style>
             </head>
