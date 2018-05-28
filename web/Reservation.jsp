@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Reserve a book</title>
     <h1>Reserve Textbook </h1>
     </head>
     <body>
@@ -29,7 +29,7 @@
     <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
     </x:transform>
     
-    <form action="ReserveAction.jsp" method ="post">
+    <form action="ReserveAction.jsp" method="post">
         <table>
             <tr>
                 <td>Name</td>
@@ -43,5 +43,6 @@
                  <td>Submit Reservation</td>
                  <td><input type = "submit" name  = "Register"> </td>
                  </form>
+    </table>
     </body>
 </html>

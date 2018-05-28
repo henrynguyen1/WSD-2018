@@ -6,10 +6,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<textbooks
-    xmlns="https://au.edu.uts.wsd/project" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="https://au.edu.uts.wsd/project Textbook.xsd">>
+<textbooks>
     <textbook bookID="1">
         <title>Violent Python</title>
         <author>TJ Oconnor</author>

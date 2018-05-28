@@ -14,11 +14,11 @@
     <body>
         <h1>List New Textbook</h1>
 
-        <form action="textAction.jsp" type="post">
+        <form action="mainAction.jsp" method="post">
             <table>
                 <tr>
                     <td>Title</td>
-                    <td><input type ="text" name="email"> </td>
+                    <td><input type ="text" name="title"> </td>
                 </tr>
                 <tr>
                     <td>Author</td>
