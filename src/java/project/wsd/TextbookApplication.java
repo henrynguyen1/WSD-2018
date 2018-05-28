@@ -67,9 +67,6 @@ public class TextbookApplication implements Serializable {
         fout.close();
     }
     
-    public void removeTextbook(){
-        
-    }
 
     public Textbooks getTextbooks() {
         return textbooks;
