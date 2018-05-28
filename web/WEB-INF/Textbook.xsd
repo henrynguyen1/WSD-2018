@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://au.edu.uts.wsd/project"
+           xmlns="https://au.edu.uts.wsd/project"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType name="date">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,2}/\d{1,2}/\d{1,4}"/>
+        </xs:restriction>
+    </xs:simpleType>   
+
+
+    <xs:element name="textbooks">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="textbook" maxOccurs="unbound">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="title" type="xs:string"/>
+                            <xs:element name="author" type="xs:string"/>
+                            <xs:element name="ISBN" type="xs:string"/>
+                            <xs:element name="date" type="date"/>
+                            <xs:element name="abstracts" type="xs:string"/>
+                            <xs:element name="category" type="xs:string"/>
+                            <xs:element name="reservation" type="xs:string"/>
+                            <xs:element name="condition" type="xs:string"/>
+                            <xs:element name="lister" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="bookID" type="xs:integer" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>   
+    
+   
+

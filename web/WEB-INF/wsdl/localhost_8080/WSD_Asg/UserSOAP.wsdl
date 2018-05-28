@@ -4,31 +4,31 @@
 <xsd:import namespace="http://soap.wsd.project/" schemaLocation="http://localhost:8080/WSD_Asg/UserSOAP?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getUsersDetail">
-<part name="parameters" element="tns:getUsersDetail"/>
-</message>
-<message name="getUsersDetailResponse">
-<part name="parameters" element="tns:getUsersDetailResponse"/>
-</message>
 <message name="getUsers">
 <part name="parameters" element="tns:getUsers"/>
 </message>
 <message name="getUsersResponse">
 <part name="parameters" element="tns:getUsersResponse"/>
 </message>
+<message name="getUsersDetail">
+<part name="parameters" element="tns:getUsersDetail"/>
+</message>
+<message name="getUsersDetailResponse">
+<part name="parameters" element="tns:getUsersDetailResponse"/>
+</message>
 <portType name="UserSOAP">
-<operation name="getUsersDetail">
-<input wsam:Action="http://soap.wsd.project/UserSOAP/getUsersDetailRequest" message="tns:getUsersDetail"/>
-<output wsam:Action="http://soap.wsd.project/UserSOAP/getUsersDetailResponse" message="tns:getUsersDetailResponse"/>
-</operation>
 <operation name="getUsers">
 <input wsam:Action="http://soap.wsd.project/UserSOAP/getUsersRequest" message="tns:getUsers"/>
 <output wsam:Action="http://soap.wsd.project/UserSOAP/getUsersResponse" message="tns:getUsersResponse"/>
 </operation>
+<operation name="getUsersDetail">
+<input wsam:Action="http://soap.wsd.project/UserSOAP/getUsersDetailRequest" message="tns:getUsersDetail"/>
+<output wsam:Action="http://soap.wsd.project/UserSOAP/getUsersDetailResponse" message="tns:getUsersDetailResponse"/>
+</operation>
 </portType>
 <binding name="UserSOAPPortBinding" type="tns:UserSOAP">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getUsersDetail">
+<operation name="getUsers">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getUsers">
+<operation name="getUsersDetail">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

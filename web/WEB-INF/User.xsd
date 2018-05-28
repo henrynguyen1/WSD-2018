@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://au.edu.uts.wsd/project"
+           xmlns="https://au.edu.uts.wsd/project"
+           elementFormDefault="qualified">
+    
+    
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,2}/\d{1,2}/\d{1,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Z0-9_\-\.]+)@([a-z\-])+(\.[a-z\-]+)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dob">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,2}/\d{1,2}/\d{1,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="password">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][a-z]+(\s[A-Z][a-z]+)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="users">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name ="name" type="name"/>
+                            <xs:element name="email" type="email"/>
+                            <xs:element name="dob" type="dob"/>
+                            <xs:element name="password" type="password"/>
+                        </xs:sequence>
+                        <xs:attribute name="userID" type="xs:integer" use="required"/>
+                    </xs:complexType> 
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+

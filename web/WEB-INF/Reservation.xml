@@ -6,7 +6,10 @@ and open the template in the editor.
 -->
 
 
-<reservations>
+<reservations
+    xmlns="https://au.edu.uts.wsd/project" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="https://au.edu.uts.wsd/project Reservation.xsd">
     <reservation resID="1" bookID="4">
         <username>MJ23</username>
         <email>mjordan@gmail.com </email>

@@ -4,7 +4,11 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<users>
+<users
+    xmlns="https://au.edu.uts.wsd/project" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="https://au.edu.uts.wsd/project User.xsd">
+    >
     <user userID="1">
         <name>Michael Nguyen</name>
         <email>MichaelNg@gmail.com</email>

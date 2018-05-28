@@ -12,9 +12,10 @@ import java.util.Scanner;
  *
  * @author Anh Minh Tran
  */
-
 public class TextboookSOAPClient {
-        private static Boolean loggedin;
+
+    private static Boolean loggedin;
+
     public static void main(String[] args) throws Throwable {
         Scanner scanner = new Scanner(System.in);
         loggedin = false;
@@ -38,10 +39,8 @@ public class TextboookSOAPClient {
                     DisplayBook();
                     break;
                 case 'd':
-                    if (loggedin == true)
-                        System.out.println("Listing");
-                    else
-                        System.out.println("Have to log in");
+                    AddBook();
+
                 default:
                     System.out.println("Sorry, didn't understand your input.");
                     break;
@@ -50,14 +49,12 @@ public class TextboookSOAPClient {
         }
 
     }
-    
-    private static void DisplayBook()
-    {
+
+    private static void DisplayBook() {
         TextbookSOAP_Service locator = new TextbookSOAP_Service();
         TextbookSOAP BookSOAP = locator.getTextbookSOAPPort();
         List<Textbook> books = BookSOAP.fetchBook();
-        if (books !=null)
-        {
+        if (books != null) {
             books.forEach(book -> System.out.println("Found book: " + book.getTitle()));
         } else {
             System.out.println("Book not found");
@@ -81,8 +78,8 @@ public class TextboookSOAPClient {
 
         }
     }
-    
-    private static void Login(){
+
+    private static void Login() {
         UserSOAP_Service locator = new UserSOAP_Service();
         UserSOAP userSOAP = locator.getUserSOAPPort();
         String email, pass;
@@ -92,13 +89,10 @@ public class TextboookSOAPClient {
         System.out.println("Enter password: ");
         pass = scanner.nextLine();
         User user = userSOAP.getUsersDetail(email, pass);
-        if (user != null)
-        {
+        if (user != null) {
             System.out.println("Working");
-            loggedin= true;
-        }
-        else
-        {
+            loggedin = true;
+        } else {
             System.out.println("Nope");
         }
     }
@@ -108,12 +102,43 @@ public class TextboookSOAPClient {
             "A --> Login",
             "B --> Log out",
             "C --> Show all books",
-            "D --> List a book"
-            
+            "D --> Add a book"
+
         };
 
         for (String option : options) {
             System.out.println(option);
         }
+    }
+
+    private static void AddBook() throws Exception_Exception {
+        String title, author, ISBN, publisher, abstracts, category, reservation, lister, condition;
+        int bookID;
+        Scanner scanner = new Scanner(System.in);
+        TextbookSOAP_Service locator = new TextbookSOAP_Service();
+        TextbookSOAP BookSOAP = locator.getTextbookSOAPPort();
+
+        System.out.println("Enter title:");
+        title = scanner.nextLine();
+        System.out.println("Enter author: ");
+        author = scanner.nextLine();
+        System.out.println("Enter ISBN:");
+        ISBN = scanner.nextLine();
+        System.out.println("Enter publisher:");
+        publisher = scanner.nextLine();
+        System.out.println("Enter abstracts:");
+        abstracts = scanner.nextLine();
+        System.out.println("Enter category:");
+        category = scanner.nextLine();
+        System.out.println("Enter reservation:");
+        reservation = scanner.nextLine();
+        System.out.println("Enter bookID:");
+        bookID = scanner.nextInt();
+        System.out.println("Enter lister:");
+        lister = scanner.nextLine();
+        System.out.println("Enter condition:");
+        condition = scanner.nextLine();
+        BookSOAP.addBook(title, author, ISBN, publisher, abstracts, category, reservation, bookID, lister, condition);
+        System.out.println("Run");
     }
 }

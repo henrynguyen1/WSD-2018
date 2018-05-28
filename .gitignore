@@ -1,3 +1,4 @@
 /build/
 /dist/
 /nbproject/private/
+/web/WEB-INF/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.xsd_1.xsd

@@ -10,8 +10,8 @@
   </services>
   <clients>
     <client name="TextbookSOAP">
-      <wsdl-url>http://localhost:8080/WSD-2018/TextbookSOAP?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/WSD-2018/TextbookSOAP.wsdl</local-wsdl-file>
+      <wsdl-url>http://localhost:8080/WSD_Asg/TextbookSOAP?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/WSD_Asg/TextbookSOAP.wsdl</local-wsdl-file>
       <package-name forceReplace="true">project.wsd.soap.client</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -29,7 +29,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSD-2018/TextbookSOAP?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/WSD_Asg/TextbookSOAP?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -46,8 +46,8 @@
       </wsimport-options>
     </client>
     <client name="UserSOAP">
-      <wsdl-url>http://localhost:8080/WSD-2018/UserSOAP?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/WSD-2018/UserSOAP.wsdl</local-wsdl-file>
+      <wsdl-url>http://localhost:8080/WSD_Asg/UserSOAP?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/WSD_Asg/UserSOAP.wsdl</local-wsdl-file>
       <package-name forceReplace="true">project.wsd.soap.client</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -65,7 +65,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSD-2018/UserSOAP?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/WSD_Asg/UserSOAP?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
