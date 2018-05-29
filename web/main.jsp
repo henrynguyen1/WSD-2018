@@ -61,7 +61,7 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
                 </td>
             </tr>
         </table>
-        <c:import url= "<%= xml %>"
+        <c:import url= "<%=xml%>"
                   var="inputDoc" />
 
 
@@ -71,6 +71,7 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
         <!-- Transform xml inputDoc using stylesheet -->
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
         </x:transform>
+        
         <%}%>
     </body>
 </html>

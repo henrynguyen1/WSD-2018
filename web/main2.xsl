@@ -29,7 +29,7 @@
         </html>
     </xsl:template>
     
-    <xsl:template match="textbook">
+    <xsl:template match="textbooks">
         
         <table class="textbook">
             <thead>
@@ -43,8 +43,16 @@
                     
                 </tr>
             </thead>
-            <tbody>
-                <td width="400px"> 
+            <tbody>            
+                <xsl:apply-templates/>
+            </tbody>
+        </table>
+        
+        
+    </xsl:template>
+    <xsl:template match="textbook">
+        <tr>
+                        <td width="400px"> 
                     <a href="./BookDetail.jsp?title={title}"> <!--/bookDetails?id=<xsl:apply-templates select="id"/> -->
                         <xsl:apply-templates select="title"/>
                     </a>
@@ -64,11 +72,6 @@
                 <td>
                     <a href= "mainAction.jsp?delete={@bookID}">Delete</a>
                 </td>
-              
-                
-            </tbody>
-        </table>
-        
-        
+                </tr>
     </xsl:template>
 </xsl:stylesheet>

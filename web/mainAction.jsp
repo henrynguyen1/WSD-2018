@@ -13,22 +13,25 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
         
-        <%int bookID = 6;%>
+        
+        <%int bookID = Integer.parseInt(request.getParameter("delete"));%>
             <% String filePath = application.getRealPath("WEB-INF/Textbook.xml");%>
         <jsp:useBean id="textbookApp" class="project.wsd.TextbookApplication" scope="application">
             <jsp:setProperty name="textbookApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
         <%Textbooks textbooks = textbookApp.getTextbooks(); %>
         
-            <%
+            <%if(bookID != 0){%>
+        <h1>Delete</h1>
+        <%
                 Textbook textbook = textbooks.getTextbook(bookID);
                 session.setAttribute("textbook",textbook);
                 textbooks.removeTextbook(textbook);
                 textbookApp.updateXML(textbooks, filePath);
 
                 %>
+                <%}%>
         
     </body>
 </html>
