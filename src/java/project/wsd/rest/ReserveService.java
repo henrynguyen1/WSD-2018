@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package project.wsd.rest;
+
 import javax.ws.rs.core.*;
 import javax.ws.rs.*;
 import javax.xml.bind.JAXBException;
@@ -13,24 +14,21 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import project.wsd.*;
 
-
-
 /**
  *
  * @author HenryNguyen
  */
 @Path("/reservations")
 public class ReserveService {
-    
+
     @Context
     private ServletContext application;
-    
-    private ReserveApplication getReserveApp () throws JAXBException, IOException {
-    
-        
+
+    private ReserveApplication getReserveApp() throws JAXBException, IOException {
+
         synchronized (application) {
             ReserveApplication reserveApp = (ReserveApplication) application.getAttribute("reserveApp");
-            if (reserveApp == null){
+            if (reserveApp == null) {
                 reserveApp = new ReserveApplication();
                 reserveApp.setFilePath(application.getRealPath("WEB-INF/Reservation.xml"));
                 application.setAttribute("reserveApp", reserveApp);
@@ -38,22 +36,27 @@ public class ReserveService {
             return reserveApp;
         }
     }
-    
-@Path("reservation")
-@GET
-@Produces(MediaType.APPLICATION_XML)
-public Reservations getReservations() throws JAXBException, IOException{
-return getReserveApp().getReservations();
+
+    @Path("reservation")
+    @GET
+    @Produces(MediaType.APPLICATION_XML)
+    public Reservations getReservations() throws JAXBException, IOException {
+        return getReserveApp().getReservations();
+    }
+
+    @Path("reservationID")
+    @GET
+    @Produces(MediaType.APPLICATION_XML)
+    public Reservation getReservation(@QueryParam("reservationID") int resID) throws JAXBException, IOException {
+        return getReserveApp().getReservations().getReservation(resID);
+    }
+
+    @Path("filter")
+    @GET
+    @Produces(MediaType.APPLICATION_XML)
+    public List<Reservation> getTest() throws JAXBException, IOException {
+        List<Reservation> values = getReservations().getList();
+        return values;
+    }
+
 }
-
-@Path("reservationID")
-@GET
-@Produces(MediaType.APPLICATION_XML)
-public Reservation getReservation(@QueryParam("reservationID") int resID) throws JAXBException, IOException {
-    return getReserveApp().getReservations().getReservation(resID);
-}
-}
-
-
-
-

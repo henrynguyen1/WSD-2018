@@ -41,7 +41,7 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
                   var="inputDoc" />
 
 
-        <c:import url="./main.xsl"
+        <c:import url="./main2.xsl"
                   var="stylesheet" />
 
         <!-- Transform xml inputDoc using stylesheet -->
@@ -65,7 +65,7 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
                   var="inputDoc" />
 
 
-        <c:import url="./main2.xsl"
+        <c:import url="./main.xsl"
                   var="stylesheet" />
 
         <!-- Transform xml inputDoc using stylesheet -->

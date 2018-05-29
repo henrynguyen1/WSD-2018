@@ -37,6 +37,7 @@
                         Textbook textbook = new Textbook(title, author, ISBN, publisher, date, abstracts, category, reservation, bookID, lister, condition);
                         session.setAttribute("textbook", textbook);
                         textbooks.addTextbook(textbook);
+                        textbookApp.updateXML(textbooks, filePath);
                         
                     %>
     </body>

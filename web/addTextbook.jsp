@@ -14,7 +14,7 @@
     <body>
         <h1>List New Textbook</h1>
 
-        <form action="mainAction.jsp" method="post">
+        <form action="textbookAction.jsp" method="post">
             <table>
                 <tr>
                     <td>Title</td>

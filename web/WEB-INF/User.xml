@@ -28,5 +28,12 @@ and open the template in the editor.
         <email>Tweeny@tweenyscott.com</email>
         <dob>14/04/1978</dob>
         <password>cheese</password>
+        
+    </user>
+    <user userID="5">
+        <name>Brendan Lam</name>
+        <email>bsaproductions@hotmail.com</email>
+        <dob>14/04/1978</dob>
+        <password>boi</password>
     </user>
 </users>

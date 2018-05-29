@@ -35,7 +35,7 @@ public class Textbook implements Serializable {
     @XmlElement(name = "reservation")
     private String reservation;
     @XmlAttribute(name = "bookID")
-    private Integer bookID;
+    private int bookID;
     @XmlElement(name = "lister")
     private String lister;
     @XmlElement(name = "condition")
@@ -45,7 +45,7 @@ public class Textbook implements Serializable {
 
     }
 
-    public Textbook(String title, String author, String ISBN, String publisher, String date, String abstracts, String category, String reservation, Integer bookID, String lister, String condition) {
+    public Textbook(String title, String author, String ISBN, String publisher, String date, String abstracts, String category, String reservation, int bookID, String lister, String condition) {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
@@ -76,11 +76,11 @@ public class Textbook implements Serializable {
         this.lister = lister;
     }
 
-    public Integer getBookID() {
+    public int getBookID() {
         return bookID;
     }
 
-    public void setBookID(Integer bookID) {
+    public void setBookID(int bookID) {
         this.bookID = bookID;
     }
 

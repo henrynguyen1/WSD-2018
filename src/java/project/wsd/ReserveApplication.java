@@ -57,7 +57,7 @@ public void setFilePath(String filePath) {//throws JAXBException, FileNotFoundEx
 public void updateXML(Reservations reservations, String filePath) throws Exception {
         this.reservations = reservations;
         this.filePath = filePath;
-        JAXBContext jc = JAXBContext.newInstance(Textbooks.class);
+        JAXBContext jc = JAXBContext.newInstance(Reservations.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         FileOutputStream fout = new FileOutputStream(filePath);
