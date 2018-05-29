@@ -4,8 +4,8 @@
     <system systemId="http://localhost:8080/WSD-2018/TextbookSOAP?xsd=1" uri="src/conf/xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD-2018/TextbookSOAP.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/WSD-2018/UserSOAP?wsdl" uri="src/conf/xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD-2018/UserSOAP.wsdl"/>
     <system systemId="http://localhost:8080/WSD-2018/UserSOAP?xsd=1" uri="src/conf/xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD-2018/UserSOAP.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/WSD_Asg/TextbookSOAP?wsdl" uri="src/conf/xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl"/>
-    <system systemId="http://localhost:8080/WSD_Asg/TextbookSOAP?xsd=1" uri="src/conf/xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/WSD_Asg/UserSOAP?wsdl" uri="src/conf/xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD_Asg/UserSOAP.wsdl"/>
     <system systemId="http://localhost:8080/WSD_Asg/UserSOAP?xsd=1" uri="src/conf/xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD_Asg/UserSOAP.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSD_Asg/TextbookSOAP?wsdl" uri="src/conf/xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl"/>
+    <system systemId="http://localhost:8080/WSD_Asg/TextbookSOAP?xsd=1" uri="src/conf/xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.xsd_1.xsd"/>
 </catalog>

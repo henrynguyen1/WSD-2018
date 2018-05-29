@@ -29,6 +29,7 @@ public class TextbookSOAP {
     private WebServiceContext context;
     private static TextbookApplication bookA;
 
+    // Retrieve textbook application to access methods of textbooks
     private TextbookApplication getBookApp() {
         ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
         synchronized (application) {
@@ -43,6 +44,7 @@ public class TextbookSOAP {
         }
     }
 
+    // Get all book in the list
     public List<Textbook> fetchBook()  {
         List<Textbook> books = new ArrayList<Textbook>();
         
@@ -50,6 +52,7 @@ public class TextbookSOAP {
         return books;
     }
     
+    // Find book using ID as the parameter
     public List<Textbook> fetchBookID(int ID){
         List<Textbook> books = new ArrayList<Textbook>();
         
@@ -61,6 +64,7 @@ public class TextbookSOAP {
         return books;
     }
     
+    // Find book using title as the parameter
     public List<Textbook> fetchBookT(String title){
         List<Textbook> books = new ArrayList<Textbook>();
         Textbook book = getBookApp().getTextbooks().getTextbookT(title);
@@ -71,10 +75,12 @@ public class TextbookSOAP {
         return books;
     }
     
+    // Add book into the XML
     public void addBook(String title, String author, String ISBN, String publisher, String abstracts, String category, String reservation, Integer bookID, String lister, String condition) throws Exception{
         ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
         String filePath = application.getRealPath("WEB-INF/Textbook.xml") ;
         Textbook textbook = new Textbook();
+        List<Textbook> books = new ArrayList<Textbook>();
         
         textbook.setAuthor(author);
         textbook.setTitle(title);
@@ -88,7 +94,9 @@ public class TextbookSOAP {
         textbook.setCondition(condition);
         Textbooks textbooks = new Textbooks(); 
         textbooks.addTextbook(textbook);
-        bookA.updateXML(textbooks, filePath);
+//       bookA.updateXML(textbooks, filePath);
+        
+        books.add(textbook);
         
     }
 }

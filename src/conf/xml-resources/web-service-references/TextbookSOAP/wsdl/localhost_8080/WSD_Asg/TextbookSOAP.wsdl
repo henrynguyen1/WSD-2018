@@ -4,6 +4,24 @@
 <xsd:import namespace="http://soap.wsd.project/" schemaLocation="http://localhost:8080/WSD_Asg/TextbookSOAP?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="fetchBookID">
+<part name="parameters" element="tns:fetchBookID"/>
+</message>
+<message name="fetchBookIDResponse">
+<part name="parameters" element="tns:fetchBookIDResponse"/>
+</message>
+<message name="fetchBookT">
+<part name="parameters" element="tns:fetchBookT"/>
+</message>
+<message name="fetchBookTResponse">
+<part name="parameters" element="tns:fetchBookTResponse"/>
+</message>
+<message name="fetchBook">
+<part name="parameters" element="tns:fetchBook"/>
+</message>
+<message name="fetchBookResponse">
+<part name="parameters" element="tns:fetchBookResponse"/>
+</message>
 <message name="addBook">
 <part name="parameters" element="tns:addBook"/>
 </message>
@@ -13,45 +31,54 @@
 <message name="Exception">
 <part name="fault" element="tns:Exception"/>
 </message>
-<message name="fetchBookID">
-<part name="parameters" element="tns:fetchBookID"/>
-</message>
-<message name="fetchBookIDResponse">
-<part name="parameters" element="tns:fetchBookIDResponse"/>
-</message>
-<message name="fetchBook">
-<part name="parameters" element="tns:fetchBook"/>
-</message>
-<message name="fetchBookResponse">
-<part name="parameters" element="tns:fetchBookResponse"/>
-</message>
-<message name="fetchBookT">
-<part name="parameters" element="tns:fetchBookT"/>
-</message>
-<message name="fetchBookTResponse">
-<part name="parameters" element="tns:fetchBookTResponse"/>
-</message>
 <portType name="TextbookSOAP">
-<operation name="addBook">
-<input wsam:Action="http://soap.wsd.project/TextbookSOAP/addBookRequest" message="tns:addBook"/>
-<output wsam:Action="http://soap.wsd.project/TextbookSOAP/addBookResponse" message="tns:addBookResponse"/>
-<fault message="tns:Exception" name="Exception" wsam:Action="http://soap.wsd.project/TextbookSOAP/addBook/Fault/Exception"/>
-</operation>
 <operation name="fetchBookID">
 <input wsam:Action="http://soap.wsd.project/TextbookSOAP/fetchBookIDRequest" message="tns:fetchBookID"/>
 <output wsam:Action="http://soap.wsd.project/TextbookSOAP/fetchBookIDResponse" message="tns:fetchBookIDResponse"/>
-</operation>
-<operation name="fetchBook">
-<input wsam:Action="http://soap.wsd.project/TextbookSOAP/fetchBookRequest" message="tns:fetchBook"/>
-<output wsam:Action="http://soap.wsd.project/TextbookSOAP/fetchBookResponse" message="tns:fetchBookResponse"/>
 </operation>
 <operation name="fetchBookT">
 <input wsam:Action="http://soap.wsd.project/TextbookSOAP/fetchBookTRequest" message="tns:fetchBookT"/>
 <output wsam:Action="http://soap.wsd.project/TextbookSOAP/fetchBookTResponse" message="tns:fetchBookTResponse"/>
 </operation>
+<operation name="fetchBook">
+<input wsam:Action="http://soap.wsd.project/TextbookSOAP/fetchBookRequest" message="tns:fetchBook"/>
+<output wsam:Action="http://soap.wsd.project/TextbookSOAP/fetchBookResponse" message="tns:fetchBookResponse"/>
+</operation>
+<operation name="addBook">
+<input wsam:Action="http://soap.wsd.project/TextbookSOAP/addBookRequest" message="tns:addBook"/>
+<output wsam:Action="http://soap.wsd.project/TextbookSOAP/addBookResponse" message="tns:addBookResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://soap.wsd.project/TextbookSOAP/addBook/Fault/Exception"/>
+</operation>
 </portType>
 <binding name="TextbookSOAPPortBinding" type="tns:TextbookSOAP">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="fetchBookID">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="fetchBookT">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="fetchBook">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="addBook">
 <soap:operation soapAction=""/>
 <input>
@@ -63,33 +90,6 @@
 <fault name="Exception">
 <soap:fault name="Exception" use="literal"/>
 </fault>
-</operation>
-<operation name="fetchBookID">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="fetchBook">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="fetchBookT">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
 </operation>
 </binding>
 <service name="TextbookSOAP">

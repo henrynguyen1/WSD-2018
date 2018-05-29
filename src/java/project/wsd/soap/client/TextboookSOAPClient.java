@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *
+ * This file will act as a client run by the system to simulate SOAP web service
  * @author Anh Minh Tran
  */
 public class TextboookSOAPClient {
@@ -21,7 +21,6 @@ public class TextboookSOAPClient {
         loggedin = false;
         while (true) {
             printOptions();
-
             String input = scanner.nextLine();
 
             if (input == null) {
@@ -29,18 +28,21 @@ public class TextboookSOAPClient {
             }
 
             switch (input.toLowerCase().charAt(0)) {
-                case 'a':
+                case '1':
                     Login();
                     break;
-                case 'b':
+                case '2':
                     loggedin = false;
                     break;
-                case 'c':
+                case '3':
                     DisplayBook();
                     break;
-                case 'd':
+                case '4':
+                    FindBookID();
+                    break;
+                case '5':
                     AddBook();
-
+                    break;
                 default:
                     System.out.println("Sorry, didn't understand your input.");
                     break;
@@ -49,7 +51,7 @@ public class TextboookSOAPClient {
         }
 
     }
-
+    // Display all book curently in the XML file
     private static void DisplayBook() {
         TextbookSOAP_Service locator = new TextbookSOAP_Service();
         TextbookSOAP BookSOAP = locator.getTextbookSOAPPort();
@@ -60,7 +62,7 @@ public class TextboookSOAPClient {
             System.out.println("Book not found");
         }
     }
-
+    // Find book in the system by filtering book ID
     private static void FindBookID() {
         TextbookSOAP_Service locator = new TextbookSOAP_Service();
         TextbookSOAP BookSOAP = locator.getTextbookSOAPPort();
@@ -78,7 +80,7 @@ public class TextboookSOAPClient {
 
         }
     }
-
+    // Login using the data in User XML
     private static void Login() {
         UserSOAP_Service locator = new UserSOAP_Service();
         UserSOAP userSOAP = locator.getUserSOAPPort();
@@ -90,19 +92,20 @@ public class TextboookSOAPClient {
         pass = scanner.nextLine();
         User user = userSOAP.getUsersDetail(email, pass);
         if (user != null) {
-            System.out.println("Working");
+            System.out.println("You have been logged in");
             loggedin = true;
         } else {
-            System.out.println("Nope");
+            System.out.println("Input information is wrong. Please try again");
         }
     }
-
+    // List all available option for user 
     private static void printOptions() {
         String[] options = {
-            "A --> Login",
-            "B --> Log out",
-            "C --> Show all books",
-            "D --> Add a book"
+            "1 --> Login",
+            "2 --> Log out",
+            "3 --> Show all books",
+            "4 --> Find book by ID",
+            "5 --> Add a book"
 
         };
 
@@ -110,7 +113,7 @@ public class TextboookSOAPClient {
             System.out.println(option);
         }
     }
-
+    // Add book in the database
     private static void AddBook() throws Exception_Exception {
         String title, author, ISBN, publisher, abstracts, category, reservation, lister, condition;
         int bookID;
@@ -139,6 +142,5 @@ public class TextboookSOAPClient {
         System.out.println("Enter condition:");
         condition = scanner.nextLine();
         BookSOAP.addBook(title, author, ISBN, publisher, abstracts, category, reservation, bookID, lister, condition);
-        System.out.println("Run");
     }
 }
