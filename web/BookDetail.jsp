@@ -29,7 +29,6 @@
 
     <!-- Transform xml inputDoc using stylesheet -->
     <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-        <x:param name="bgColor"  value="lightgreen" />
     </x:transform>
 
     <p><input type="submit" value="Reserve"/></p> 

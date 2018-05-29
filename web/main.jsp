@@ -11,10 +11,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%String test = request.getParameter("title");
-String xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?unique";
-String title = request.getParameter("title") == null ? "" : URLEncoder.encode(request.getParameter("title"), "UTF-8").replace("+", "%20");
- if(test !=null){
-    xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?title=" +title;
+    String xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?unique";
+    String title = request.getParameter("title") == null ? "" : URLEncoder.encode(request.getParameter("title"), "UTF-8").replace("+", "%20");
+    if (test != null) {
+        xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?title=" + title;
     }%>
 
 <html>
@@ -23,14 +23,14 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
         <title>Main</title>
     </head>
     <%
-        User user = (User)session.getAttribute("user");
-        %>
+        User user = (User) session.getAttribute("user");
+    %>
     <body>
-        <%if(user!=null){ %>
+        <%if (user != null) {%>
         <table align="right">
-             <tr>
+            <tr>
                 <td>
-                    You are logged in as <%= user.getName() %>
+                    You are logged in as <%= user.getName()%>
                 </td>
                 <td>
                     <a href="logout.jsp">Logout </a>
@@ -47,7 +47,7 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
         <!-- Transform xml inputDoc using stylesheet -->
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
         </x:transform>
-        <%} else{ %>
+        <%} else {%>
         <table align="right">
             <tr>
                 <td>
@@ -56,8 +56,8 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
             </tr>
             <tr>
                 <td>
-                   Click <a href="login.jsp">here</a> to Login.
-                   
+                    Click <a href="login.jsp">here</a> to Login.
+
                 </td>
             </tr>
         </table>
@@ -71,7 +71,7 @@ String title = request.getParameter("title") == null ? "" : URLEncoder.encode(re
         <!-- Transform xml inputDoc using stylesheet -->
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
         </x:transform>
-        
+
         <%}%>
     </body>
 </html>

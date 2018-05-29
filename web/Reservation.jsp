@@ -18,18 +18,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reserve a book</title>
     <h1>Reserve Textbook </h1>
-    </head>
-    <body>
+</head>
+<body>
+    <form action="ReserveAction.jsp" method="post">
         <c:import url="<%=xml%>" var="inputDoc" />
 
 
-    <c:import url="./Reservation.xsl" var="stylesheet" />
+        <c:import url="./Reservation.xsl" var="stylesheet" />
 
-    <!-- Transform xml inputDoc using stylesheet -->
-    <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-    </x:transform>
-    
-    <form action="ReserveAction.jsp" method="post">
+        <!-- Transform xml inputDoc using stylesheet -->
+        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+        </x:transform>
+
+
         <table>
             <tr>
                 <td>Name</td>
@@ -39,10 +40,11 @@
                 <td>Email</td>
                 <td><input type ="text" name="Email"> </td>
             </tr>
-             <tr>
-                 <td>Submit Reservation</td>
-                 <td><input type = "submit" name  = "Register"> </td>
-                 </form>
-    </table>
-    </body>
+            <tr>
+                <td>Submit Reservation</td>
+                <td><input type = "submit" name  = "Register"> </td>
+
+        </table>
+    </form>
+</body>
 </html>

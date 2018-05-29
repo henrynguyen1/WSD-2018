@@ -93,7 +93,7 @@
                                 
                 </tbody>
             </table>
-            <p><input type="radio" value="{bookID}" checked=""/></p>
+            <p><input type="radio" name="bookID" value="{bookID}" checked=""/></p>
         
     </xsl:template>
 

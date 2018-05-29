@@ -12,12 +12,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reserve Action</title>
     </head>
-    <%
-        //String username = request.getParameter("Username");
-        //String email = request.getParameter("Email");
-        //int bookID = Integer.parseInt(request.getParameter("bookID"));
-
-    %>
     <body>
         <% String filePath = application.getRealPath("WEB-INF/Reservation.xml");%>
 
@@ -26,21 +20,21 @@
         </jsp:useBean>
 
         <%
-                    int resID = reserveApp.getReservations().getList().size();
-                    int resNew = resID++;
-            //Reservation reservation = new Reservation(resID, bookID, username, email);
-            //reservations.addReservation(reservation);
-            //reserveApp.updateXML(reservations, out);
-            
+            Reservations reservations = reserveApp.getReservations();
+            int bookID = Integer.parseInt(request.getParameter("bookID"));
+            int resNew = reserveApp.getReservations().getList().size();
+            int resID = resNew++;
+            String username = request.getParameter("username");
+            String email = request.getParameter("email");
         %>
-        <%=resID%>
-        <%=resNew%>
-        <p>Book Successfully Reserved </p>    
         <%
-            //project.wsd.Reservation = new project.wsd.Reservation();
-
-
+            Reservation reservation = new Reservation(username, email, bookID, resID);
+            session.setAttribute("reservation", reservation);
+            reservations.addReservation(reservation);
+            reserveApp.updateXML(reservations, filePath);
         %>
+        <p>Book Successfully Reserved </p>    
+
 
     </body>
 </html>
