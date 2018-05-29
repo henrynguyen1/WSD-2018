@@ -76,7 +76,6 @@ public class TextbookSOAP {
     }
     
     // Add book into the XML
-    public void addBook(String title, String author, String ISBN, String publisher, String abstracts, String category, String reservation, Integer bookID, String lister, String condition) throws Exception{
     public void addBook(String title, String author, String ISBN, String publisher, String abstracts, String category, String reservation, int bookID, String lister, String condition) throws Exception{
         ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
         String filePath = application.getRealPath("WEB-INF/Textbook.xml") ;
