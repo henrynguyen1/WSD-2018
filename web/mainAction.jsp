@@ -11,9 +11,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Delete</title>
+        <jsp:include page="./WEB-INF/Includes/Header.jsp"/>
     </head>
     <body>
+<% User user = (User)session.getAttribute("user");
 
+if (user != null)
+{
+%>
 
         <%int bookID = Integer.parseInt(request.getParameter("delete"));%>
         <% String filePath = application.getRealPath("WEB-INF/Textbook.xml");%>
@@ -31,7 +36,10 @@
             textbookApp.updateXML(textbooks, filePath);
 
         %>
-        <%}%>
-
+        <%}}
+else{%>
+<h1 align="center">YOU ARE NOT ALLOWED TO DELETE THIS TEXTBOOK</h1>
+<%}%>
     </body>
+    <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </html>

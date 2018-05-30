@@ -43,4 +43,5 @@
                     %>
                     <div class="container"><h2>Your book as been successfully added.</h2></div>
     </body>
+    <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </html>

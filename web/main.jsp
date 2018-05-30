@@ -54,6 +54,6 @@
     </x:transform>
 </div>
     <%}%>
-    
+    <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </body>
 </html>

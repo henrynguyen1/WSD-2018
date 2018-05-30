@@ -73,5 +73,6 @@
         <%}%>
     </form>
     </div>
+    <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </body>
 

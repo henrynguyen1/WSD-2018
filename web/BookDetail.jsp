@@ -38,5 +38,6 @@
             <p><input type="submit" value="Reserve"/></p> 
         </form>
     </div>
+            <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </body>
 </html>

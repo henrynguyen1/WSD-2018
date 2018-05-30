@@ -39,4 +39,5 @@
 
 
     </body>
+    <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </html>
