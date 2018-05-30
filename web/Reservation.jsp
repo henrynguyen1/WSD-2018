@@ -2,6 +2,7 @@
     Document   : Reservation
     Created on : 25/05/2018, 11:00:09 AM
     Author     : HenryNguyen
+    This page is used to reserve a chosen book
 --%>
 
 <%@page import="java.net.URLEncoder"%>
@@ -11,6 +12,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 
+// URL of the chosen book
 <%String bookID = request.getParameter("bookID");%>
 <% String xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?bookID=" + bookID;%>
 <html>
@@ -20,6 +22,7 @@
     <h1>Reserve Textbook </h1>
 </head>
 <body>
+    // Create a form for Reserve Action jsp page to use
     <form action="ReserveAction.jsp" method="post">
         <c:import url="<%=xml%>" var="inputDoc" />
 
@@ -30,7 +33,7 @@
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
         </x:transform>
 
-
+        // Table for user to input info into
         <table>
             <tr>
                 <td>Name</td>
