@@ -9,14 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>User Registeration</title>
 
     </head>
     <body>
         <h1>Register</h1>
         <br>
         <br>
-        <form action="main.jsp" method ="post">
+        <form action="registerAction.jsp" method ="post">
         <table>
             <tr>
                 <td>Email</td>

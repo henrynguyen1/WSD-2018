@@ -42,10 +42,11 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String email, String name, String password) {
+    public User(String email, String name, String password, int userID) {
         this.email = email;
         this.name = name;
         this.password = password;
+        this.userID = userID;
        
     }
     public String getEmail() {
@@ -59,6 +60,7 @@ public class User implements Serializable {
     public String getName() {
         return name;
     }
+    
 
     public void setName(String name) {
         this.name = name;
