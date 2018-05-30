@@ -12,7 +12,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 
-// Create URL based on the book
 <%String title = request.getParameter("title") == null ? "" : URLEncoder.encode(request.getParameter("title"), "UTF-8").replace("+", "%20"); %>
 <%String headerT = request.getParameter("title");%>
 <% String xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?title=" + title;%>

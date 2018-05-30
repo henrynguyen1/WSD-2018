@@ -30,9 +30,9 @@ public class Reservations implements Serializable{
         list.remove(reservation);
     }
     
-    public Reservation getReservation(int resID){
+    public Reservation getReservation(int bookID){
        for (Reservation reservation: list){
-           if(reservation.getResID() == resID)
+           if(reservation.getBookID() == bookID)
                return reservation;
        }
        return null;

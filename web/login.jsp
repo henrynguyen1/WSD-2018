@@ -17,8 +17,8 @@
         
         <form action="loginAction.jsp" method ="post">
             <div class="container">
-                <h1>Login</h1>
-            <table class="table-bordered">
+                <h1 align="center">Login</h1>
+            <table align="center">
             <tr>
                 <td>Email</td>
                 <td><input type ="text" name="email"> </td>
@@ -29,7 +29,7 @@
             </tr>
              <tr>
                 <td>Login</td>
-                <td><input type ="submit" value="login"> </td>
+                <td><input type ="submit" value="login" class="btn btn-primary"></td>
             </tr>
             </form>
         </table>

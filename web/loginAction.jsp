@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Action</title>
+        <jsp:include page="WEB-INF/Includes/Header.jsp"/>
     </head>
     <body>
         <% String filePath = application.getRealPath("WEB-INF/User.xml"); %>
@@ -27,13 +28,17 @@
         {
             session.setAttribute("user",user);
             %>
+            <div class="container">
             <p>Login successful. Click <a href="main.jsp" >here </a> 
            to proceed to the main page </p>
+            </div>
         <%}
         else
         { %>
+            <div class="container">
         <p>Password incorrect. Click <a href="login.jsp">here</a> 
             to try again.</p>
+        </div>
         <% }%>
         
     </body>

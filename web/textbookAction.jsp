@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Textbook Confirm</title>
+        <jsp:include page="WEB-INF/Includes/Header.jsp"/>
     </head>
     <body>
                     <% String filePath = application.getRealPath("WEB-INF/Textbook.xml");%>
@@ -40,6 +41,6 @@
                         textbookApp.updateXML(textbooks, filePath);
                         
                     %>
-                    
+                    <div class="container"><h2>Your book as been successfully added.</h2></div>
     </body>
 </html>

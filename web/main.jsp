@@ -39,6 +39,7 @@
              <!-- Transform xml inputDoc using stylesheet -->
              <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
              </x:transform>
+             <div class="container"><jsp:include page="./addTextbook.jsp"/></div>
     </div>
     <%} else {%>
     <div class="container">
@@ -53,5 +54,6 @@
     </x:transform>
 </div>
     <%}%>
+    
 </body>
 </html>
