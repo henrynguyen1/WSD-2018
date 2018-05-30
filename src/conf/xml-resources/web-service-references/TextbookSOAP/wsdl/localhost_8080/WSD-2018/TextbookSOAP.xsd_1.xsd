@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.wsd.project/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.wsd.project/">
 
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="addBook" type="tns:addBook"/>
+
+<xs:element name="addBookResponse" type="tns:addBookResponse"/>
+
 <xs:element name="fetchBook" type="tns:fetchBook"/>
 
 <xs:element name="fetchBookID" type="tns:fetchBookID"/>
@@ -11,6 +17,10 @@
 <xs:element name="fetchBookT" type="tns:fetchBookT"/>
 
 <xs:element name="fetchBookTResponse" type="tns:fetchBookTResponse"/>
+
+<xs:element name="removeBook" type="tns:removeBook"/>
+
+<xs:element name="removeBookResponse" type="tns:removeBookResponse"/>
 
 <xs:element name="textbook" type="tns:textbook"/>
 
@@ -36,6 +46,8 @@
 <xs:element name="abstracts" type="xs:string" minOccurs="0"/>
 <xs:element name="category" type="xs:string" minOccurs="0"/>
 <xs:element name="reservation" type="xs:string" minOccurs="0"/>
+<xs:element name="lister" type="xs:string" minOccurs="0"/>
+<xs:element name="condition" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 <xs:attribute name="bookID" type="xs:int" use="required"/>
 </xs:complexType>
@@ -50,6 +62,32 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addBook">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+<xs:element name="arg5" type="xs:string" minOccurs="0"/>
+<xs:element name="arg6" type="xs:string" minOccurs="0"/>
+<xs:element name="arg7" type="xs:string" minOccurs="0"/>
+<xs:element name="arg8" type="xs:int"/>
+<xs:element name="arg9" type="xs:string" minOccurs="0"/>
+<xs:element name="arg10" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBookResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="fetchBookID">
 <xs:sequence>
 <xs:element name="arg0" type="xs:int"/>
@@ -60,5 +98,15 @@
 <xs:sequence>
 <xs:element name="return" type="tns:textbook" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeBook">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeBookResponse">
+<xs:sequence/>
 </xs:complexType>
 </xs:schema>

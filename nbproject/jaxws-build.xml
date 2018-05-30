@@ -53,8 +53,8 @@
     </target>
     <target name="wsimport-client-UserSOAP" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/UserSOAP"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UserSOAP" destdir="${build.generated.dir}/jax-wsCache/UserSOAP" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD_Asg/UserSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSD_Asg/UserSOAP?wsdl" xnocompile="true" xendorsed="true" package="project.wsd.soap.client">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD_Asg/UserSOAP.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UserSOAP" destdir="${build.generated.dir}/jax-wsCache/UserSOAP" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD-2018/UserSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSD-2018/UserSOAP?wsdl" xnocompile="true" xendorsed="true" package="project.wsd.soap.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UserSOAP/wsdl/localhost_8080/WSD-2018/UserSOAP.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/UserSOAP"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
@@ -69,8 +69,8 @@
     </target>
     <target name="wsimport-client-TextbookSOAP" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/TextbookSOAP"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TextbookSOAP" destdir="${build.generated.dir}/jax-wsCache/TextbookSOAP" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSD_Asg/TextbookSOAP?wsdl" xnocompile="true" xendorsed="true" package="project.wsd.soap.client">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD_Asg/TextbookSOAP.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TextbookSOAP" destdir="${build.generated.dir}/jax-wsCache/TextbookSOAP" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD-2018/TextbookSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSD-2018/TextbookSOAP?wsdl" xnocompile="true" xendorsed="true" package="project.wsd.soap.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TextbookSOAP/wsdl/localhost_8080/WSD-2018/TextbookSOAP.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/TextbookSOAP"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">

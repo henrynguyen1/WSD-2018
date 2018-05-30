@@ -45,58 +45,54 @@ public class TextbookSOAP {
     }
 
     // Get all book in the list
-    public List<Textbook> fetchBook()  {
+    public List<Textbook> fetchBook() {
         List<Textbook> books = new ArrayList<Textbook>();
-        
-        books = getBookApp().getTextbooks().getList();   
+
+        books = getBookApp().getTextbooks().getList();
         return books;
     }
-    
+
     // Find book using ID as the parameter
-    public List<Textbook> fetchBookID(int ID){
+    public List<Textbook> fetchBookID(int ID) {
         List<Textbook> books = new ArrayList<Textbook>();
-        
+
         Textbook book = getBookApp().getTextbooks().getTextbook(ID);
         if (book != null) {
             books.add(book);
         }
-        
+
         return books;
     }
-    
+
     // Find book using title as the parameter
-    public List<Textbook> fetchBookT(String title){
+    public List<Textbook> fetchBookT(String title) {
         List<Textbook> books = new ArrayList<Textbook>();
         Textbook book = getBookApp().getTextbooks().getTextbookT(title);
-        if (book != null)
-        {
+        if (book != null) {
             books.add(book);
         }
         return books;
     }
-    
+
     // Add book into the XML
-    public void addBook(String title, String author, String ISBN, String publisher, String abstracts, String category, String reservation, int bookID, String lister, String condition) throws Exception{
+    public void addBook(String title, String author, String ISBN, String publisher, String date, String abstracts, String category, String reservation, int bookID, String lister, String condition) throws Exception {
         ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
-        String filePath = application.getRealPath("WEB-INF/Textbook.xml") ;
-        Textbook textbook = new Textbook();
-        List<Textbook> books = new ArrayList<Textbook>();
-        
-        textbook.setAuthor(author);
-        textbook.setTitle(title);
-        textbook.setISBN(ISBN);
-        textbook.setPublisher(publisher);
-        textbook.setAbstracts(abstracts);
-        textbook.setCategory(category);
-        textbook.setReservation(reservation);
-        textbook.setBookID(bookID);
-        textbook.setLister(lister);
-        textbook.setCondition(condition);
-        Textbooks textbooks = new Textbooks(); 
+        String filePath = application.getRealPath("WEB-INF/Textbook.xml");
+        Textbooks textbooks = getBookApp().getTextbooks();
+        Textbook textbook = new Textbook(title, author, ISBN, publisher, date, abstracts, category, reservation, bookID, lister, condition);
         textbooks.addTextbook(textbook);
-//       bookA.updateXML(textbooks, filePath);
-        
-        books.add(textbook);
-        
+
+        bookA.updateXML(textbooks, filePath);
+
+    }
+
+    // Remove the chosen book from XML
+    public void removeBook(String title) throws Exception {
+        ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
+        String filePath = application.getRealPath("WEB-INF/Textbook.xml");
+        Textbooks textbooks = getBookApp().getTextbooks();
+        Textbook textbook = textbooks.getTextbookT(title);
+        textbooks.removeTextbook(textbook);
+        bookA.updateXML(textbooks, filePath);
     }
 }
