@@ -23,55 +23,55 @@
 </head>
 <body>
     <div class="container">    
-    <form action="ReserveAction.jsp" method="post">
-        <c:import url="<%=xml%>" var="inputDoc" />
+        <form action="ReserveAction.jsp" method="post">
+            <c:import url="<%=xml%>" var="inputDoc" />
 
 
-        <c:import url="./WEB-INF/Reservation.xsl" var="stylesheet" />
+            <c:import url="./WEB-INF/Reservation.xsl" var="stylesheet" />
 
-        <!-- Transform xml inputDoc using stylesheet -->
-        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-        </x:transform>
-        <%User user = (User) session.getAttribute("user");%>
-
-
-        <%if (user != null) {
-                String test = "http://localhost:8080/WSD-2018/rest/reservations/filter?bookID=" + bookID;
-                if (test != "") {
-        %>
-
-        <h3 align="center">Here are the reservations for this book</h3>
-        <br>
-        <c:import url="<%=test%>" var="inputDoc2" />
+            <!-- Transform xml inputDoc using stylesheet -->
+            <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+            </x:transform>
+            <%User user = (User) session.getAttribute("user");%>
 
 
-        <c:import url="./WEB-INF/ReserveAction.xsl" var="stylesheet2" />
+            <%if (user != null) {
+                    String test = "http://localhost:8080/WSD-2018/rest/reservations/filter?bookID=" + bookID;
+                    if (test != "") {
+            %>
 
-        <!-- Transform xml inputDoc using stylesheet -->
-        <x:transform xml  = "${inputDoc2}" xslt = "${stylesheet2}">        
-        </x:transform>
-        <%} else {
-        %>
-        Sorry, there are no Reservations for this book.
-        <%
-            }
-        } else {%>
-        <table class="table table-bordered">
-            <tr>
-                <td>Name</td>
-                <td><input type ="text" name="Username"> </td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type ="text" name="Email"> </td>
-            </tr>
-            <tr>
-                <td>Submit Reservation</td>
-                <td><input type = "submit" name  = "Register"> </td>
-            </tr>
-        </table>
-        <%}%>
-    </form>
+            <h3 align="center">Here are the reservations for this book</h3>
+            <br>
+            <c:import url="<%=test%>" var="inputDoc2" />
+
+
+            <c:import url="./WEB-INF/ReserveAction.xsl" var="stylesheet2" />
+
+            <!-- Transform xml inputDoc using stylesheet -->
+            <x:transform xml  = "${inputDoc2}" xslt = "${stylesheet2}">        
+            </x:transform>
+            <%} else {
+            %>
+            Sorry, there are no Reservations for this book.
+            <%
+                }
+            } else {%>
+            <table class="table table-bordered">
+                <tr>
+                    <td>Name</td>
+                    <td><input type ="text" name="Username"> </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type ="text" name="Email"> </td>
+                </tr>
+                <tr>
+                    <td>Submit Reservation</td>
+                    <td><input type = "submit" name  = "Register"> </td>
+                </tr>
+            </table>
+            <%}%>
+        </form>
     </div>
     <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </body>

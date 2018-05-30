@@ -37,7 +37,7 @@ public String getFilePath() {
 
     
 
-public void setFilePath(String filePath) {//throws JAXBException, FileNotFoundException, IOException {
+public void setFilePath(String filePath) {
         this.filePath = filePath;
         try {
             // Create the unmarshaller

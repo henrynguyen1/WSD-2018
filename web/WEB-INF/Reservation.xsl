@@ -19,8 +19,6 @@
             <head>
                 <title>BookDetail.xsl</title>
                 <style>
-                    table.textbook { border: solid 1px black; border-collapse: collapse; }
-                    table.textbook td { border: solid 1px #999; }
                 </style>
             </head>
             <body>
@@ -31,7 +29,7 @@
     </xsl:template>
     
     <xsl:template match="textbook">
-            <table width="500" class="textbook">
+            <table width="500" class="table table-bordered">
                 <tbody>
 
 
