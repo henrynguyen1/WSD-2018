@@ -30,7 +30,7 @@
                     String condition = request.getParameter("condition");
                     String reservation = "no";
                     int fetchID = textbooks.getList().size();
-                    int bookID = fetchID++;
+                    int bookID = fetchID+1;
                     
                     %>
                     <%
@@ -40,5 +40,6 @@
                         textbookApp.updateXML(textbooks, filePath);
                         
                     %>
+                    
     </body>
 </html>

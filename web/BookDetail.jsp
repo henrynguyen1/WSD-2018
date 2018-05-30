@@ -24,7 +24,7 @@
     <c:import url="<%=xml%>" var="inputDoc" />
 
 
-    <c:import url=".//BookDetail.xsl"
+    <c:import url=".//WEB-INF/BookDetail.xsl"
               var="stylesheet" />
 
     <!-- Transform xml inputDoc using stylesheet -->

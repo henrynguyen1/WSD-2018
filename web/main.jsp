@@ -41,7 +41,7 @@
                   var="inputDoc" />
 
 
-        <c:import url="./main2.xsl"
+        <c:import url="./WEB-INF/main2.xsl"
                   var="stylesheet" />
 
         <!-- Transform xml inputDoc using stylesheet -->
@@ -65,7 +65,7 @@
                   var="inputDoc" />
 
 
-        <c:import url="./main.xsl"
+        <c:import url="./WEB-INF/main.xsl"
                   var="stylesheet" />
 
         <!-- Transform xml inputDoc using stylesheet -->
