@@ -23,14 +23,6 @@ public class ListerService {
     private ServletContext application;
 
     private ListerApplication getListerApp() throws JAXBException, IOException {
-        // The web server can handle requests from different clients in parallel.
-        // These are called "threads".
-        //
-        // We do NOT want other threads to manipulate the application object at the same
-        // time that we are manipulating it, otherwise bad things could happen.
-        //
-        // The "synchronized" keyword is used to lock the application object while
-        // we're manpulating it.
         synchronized (application) {
             ListerApplication listerApp = (ListerApplication) application.getAttribute("listerApp");
             if (listerApp == null) {

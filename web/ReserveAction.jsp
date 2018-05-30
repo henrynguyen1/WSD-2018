@@ -34,9 +34,10 @@
             reservations.addReservation(reservation);
             reserveApp.updateXML(reservations, filePath);
         %>
-        
+
         <div class="container"><p>Book Successfully Reserved </p>    </div>
 
 
     </body>
+    <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </html>

@@ -36,7 +36,7 @@ public class ListerApplication implements Serializable {
         return filePath;
     }
 
-    public void setFilePath(String filePath) {//throws JAXBException, FileNotFoundException, IOException {
+    public void setFilePath(String filePath) {
         this.filePath = filePath;
         try {
             // Create the unmarshaller

@@ -43,7 +43,7 @@
                     <th>Author</th>
                     <th>Category</th>
                     <th>Reservation</th>
-                    
+                    <th>No. of books</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,7 +57,7 @@
     <xsl:template match="textbook">
         <tr>
                         <td width="400px"> 
-                    <a href="./BookDetail.jsp?title={title}"> <!--/bookDetails?id=<xsl:apply-templates select="id"/> -->
+                    <a href="./BookDetail.jsp?title={title}">
                         <xsl:apply-templates select="title"/>
                     </a>
                 </td>  
@@ -69,6 +69,9 @@
                 </td>
                 <td>
                     <xsl:apply-templates select="reservation"/>
+                </td>
+                <td>
+                    <xsl:value-of select="count(textbook[title])"/>
                 </td>
         </tr>
                 

@@ -53,7 +53,7 @@
     <xsl:template match="textbook">
         <tr>
                         <td width="400px"> 
-                    <a href="./BookDetail.jsp?title={title}"> <!--/bookDetails?id=<xsl:apply-templates select="id"/> -->
+                    <a href="./BookDetail.jsp?title={title}">
                         <xsl:apply-templates select="title"/>
                     </a>
                 </td>  

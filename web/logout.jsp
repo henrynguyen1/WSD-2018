@@ -18,4 +18,5 @@
             to return to the main page</p>
         </div>
     </body>
+    <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </html>
