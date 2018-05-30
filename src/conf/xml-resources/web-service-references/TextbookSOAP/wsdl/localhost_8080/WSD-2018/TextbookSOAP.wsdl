@@ -13,6 +13,12 @@
 <message name="Exception">
 <part name="fault" element="tns:Exception"/>
 </message>
+<message name="Reserve">
+<part name="parameters" element="tns:Reserve"/>
+</message>
+<message name="ReserveResponse">
+<part name="parameters" element="tns:ReserveResponse"/>
+</message>
 <message name="removeBook">
 <part name="parameters" element="tns:removeBook"/>
 </message>
@@ -43,6 +49,11 @@
 <output wsam:Action="http://soap.wsd.project/TextbookSOAP/addBookResponse" message="tns:addBookResponse"/>
 <fault message="tns:Exception" name="Exception" wsam:Action="http://soap.wsd.project/TextbookSOAP/addBook/Fault/Exception"/>
 </operation>
+<operation name="Reserve">
+<input wsam:Action="http://soap.wsd.project/TextbookSOAP/ReserveRequest" message="tns:Reserve"/>
+<output wsam:Action="http://soap.wsd.project/TextbookSOAP/ReserveResponse" message="tns:ReserveResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://soap.wsd.project/TextbookSOAP/Reserve/Fault/Exception"/>
+</operation>
 <operation name="removeBook">
 <input wsam:Action="http://soap.wsd.project/TextbookSOAP/removeBookRequest" message="tns:removeBook"/>
 <output wsam:Action="http://soap.wsd.project/TextbookSOAP/removeBookResponse" message="tns:removeBookResponse"/>
@@ -64,6 +75,18 @@
 <binding name="TextbookSOAPPortBinding" type="tns:TextbookSOAP">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="addBook">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="Reserve">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

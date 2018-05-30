@@ -95,4 +95,21 @@ public class TextbookSOAP {
         textbooks.removeTextbook(textbook);
         bookA.updateXML(textbooks, filePath);
     }
+
+    public int Reserve(String title) throws Exception {
+        ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
+        String filePath = application.getRealPath("WEB-INF/Textbook.xml");
+        Textbooks textbooks = getBookApp().getTextbooks();
+        Textbook textbook = textbooks.getTextbookT(title);
+        String reserve = textbook.getReservation();
+        if (reserve.equalsIgnoreCase("No")) {
+            textbook.setReservation("yes");
+            bookA.updateXML(textbooks, filePath);
+            return 1;
+        } else {
+           System.out.println("Book is already reserved");
+           return 0;
+        }
+    }
+
 }

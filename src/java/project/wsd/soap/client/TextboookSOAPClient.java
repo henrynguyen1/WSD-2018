@@ -32,6 +32,8 @@ public class TextboookSOAPClient {
                 case '1':
                     if (loggedin == false) {
                         Login();
+                        loggedin = true;
+                        break;
                     } else {
                         System.out.println("You are already logged in");
                         break;
@@ -39,6 +41,7 @@ public class TextboookSOAPClient {
                 case '2':
                     if (loggedin == true) {
                         loggedin = false;
+                        break;
                     } else {
                         System.out.println("You are already logged out");
                         break;
@@ -52,6 +55,7 @@ public class TextboookSOAPClient {
                 case '5':
                     if (loggedin == true) {
                         AddBook();
+                        break;
                     } else {
                         System.out.println("You have to log in first");
                         break;
@@ -59,10 +63,20 @@ public class TextboookSOAPClient {
                 case '6':
                     if (loggedin == true) {
                         RemoveBook();
+                        break;
                     } else {
                         System.out.println("You have to log in first");
                         break;
                     }
+                case '7':
+                    if (loggedin == true) {
+                        Reserve();
+                        break;
+                    } else {
+                        System.out.println("You have to log in first");
+                        break;
+                    }
+
                 default:
                     System.out.println("Sorry, didn't understand your input.");
                     break;
@@ -130,7 +144,8 @@ public class TextboookSOAPClient {
             "3 --> Show all books",
             "4 --> Find book by ID",
             "5 --> List a book",
-            "6 --> Delete a book"
+            "6 --> Delete a book",
+            "7 --> Reserve a book"
 
         };
 
@@ -172,7 +187,7 @@ public class TextboookSOAPClient {
         System.out.println("Your book has been added");
     }
 
-    public static void RemoveBook() throws Exception_Exception {
+    private static void RemoveBook() throws Exception_Exception {
         Scanner scanner = new Scanner(System.in);
         TextbookSOAP_Service locator = new TextbookSOAP_Service();
         TextbookSOAP BookSOAP = locator.getTextbookSOAPPort();
@@ -182,6 +197,23 @@ public class TextboookSOAPClient {
         if (title != null) {
             BookSOAP.removeBook(title);
             System.out.println(title + " has been removed");
+        }
+    }
+
+    private static void Reserve() throws Exception_Exception {
+        Scanner scanner = new Scanner(System.in);
+        TextbookSOAP_Service locator = new TextbookSOAP_Service();
+        TextbookSOAP BookSOAP = locator.getTextbookSOAPPort();
+        String title;
+        System.out.println("Enter title:");
+        title = scanner.nextLine();
+        if (title != null) {
+            int result = BookSOAP.reserve(title);
+            if (result == 1) {
+                System.out.println(title + " has been reserved");
+            } else if (result ==0)  {
+                System.out.println("Cant");
+            }
         }
     }
 }
