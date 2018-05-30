@@ -21,57 +21,37 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Main</title>
+        <jsp:include page="./WEB-INF/Includes/Header.jsp"/>
     </head>
     <%
         User user = (User) session.getAttribute("user");
     %>
     <body>
         <%if (user != null) {%>
-        <table align="right">
-            <tr>
-                <td>
-                    You are logged in as <%= user.getName()%>
-                </td>
-                <td>
-                    <a href="logout.jsp">Logout </a>
-                </td>
-            </tr>
-        </table>        
-        <c:import url="<%=xml%>"
-                  var="inputDoc" />
+                <div class="container">   
+             <c:import url="<%=xml%>"
+                       var="inputDoc" />
 
 
-        <c:import url="./WEB-INF/main2.xsl"
-                  var="stylesheet" />
+             <c:import url="./WEB-INF/main2.xsl"
+                       var="stylesheet" />
 
-        <!-- Transform xml inputDoc using stylesheet -->
-        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-        </x:transform>
-        <%} else {%>
-        <table align="right">
-            <tr>
-                <td>
-                    You are not logged in
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Click <a href="login.jsp">here</a> to Login.
+             <!-- Transform xml inputDoc using stylesheet -->
+             <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+             </x:transform>
+    </div>
+    <%} else {%>
+    <div class="container">
+    <c:import url= "<%=xml%>"
+              var="inputDoc" />
 
-                </td>
-            </tr>
-        </table>
-        <c:import url= "<%=xml%>"
-                  var="inputDoc" />
+    <c:import url="./WEB-INF/main.xsl"
+              var="stylesheet" />
 
-
-        <c:import url="./WEB-INF/main.xsl"
-                  var="stylesheet" />
-
-        <!-- Transform xml inputDoc using stylesheet -->
-        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-        </x:transform>
-
-        <%}%>
-    </body>
+    <!-- Transform xml inputDoc using stylesheet -->
+    <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+    </x:transform>
+</div>
+    <%}%>
+</body>
 </html>

@@ -17,21 +17,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Book Details <%= headerT%> </title>
-    <h1>Book Details: <%= headerT%> </h1>
+        <jsp:include page="WEB-INF/Includes/Header.jsp"/>
 </head>
 <body>
+    <div class="container">
+        <h3>Book Details: <%= headerT%> </h3>
         <form action = "Reservation.jsp" method="post">  
-    <c:import url="<%=xml%>" var="inputDoc" />
+            <c:import url="<%=xml%>" var="inputDoc" />
 
 
-    <c:import url=".//WEB-INF/BookDetail.xsl"
-              var="stylesheet" />
+            <c:import url=".//WEB-INF/BookDetail.xsl"
+                      var="stylesheet" />
 
-    <!-- Transform xml inputDoc using stylesheet -->
-    <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-    </x:transform>
+            <!-- Transform xml inputDoc using stylesheet -->
+            <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+            </x:transform>
 
-    <p><input type="submit" value="Reserve"/></p> 
-        </form>      
+            <p><input type="submit" value="Reserve"/></p> 
+        </form>
+    </div>
 </body>
 </html>

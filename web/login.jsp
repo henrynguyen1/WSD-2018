@@ -9,12 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
         <title>Login</title>
     </head>
     <body>
-        <h1>Login</h1>
+        <jsp:include page="./WEB-INF/Includes/Header.jsp"/>
+        
         <form action="loginAction.jsp" method ="post">
-        <table>
+            <div class="container">
+                <h1>Login</h1>
+            <table class="table-bordered">
             <tr>
                 <td>Email</td>
                 <td><input type ="text" name="email"> </td>
@@ -25,11 +29,11 @@
             </tr>
              <tr>
                 <td>Login</td>
-                <td><input type ="submit" name="login"> </td>
+                <td><input type ="submit" value="login"> </td>
             </tr>
             </form>
         </table>
-            
+            </div>
        
         </form>
     </body>

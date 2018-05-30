@@ -32,7 +32,7 @@
     </xsl:template>
     
     <xsl:template match="textbook">
-            <table width="500" class="textbook">
+            <table width="50%" class="textbook">
                 <tbody>
 
 
@@ -46,7 +46,7 @@
                     </tr>                
                     <tr>
                         <td>Title</td>
-                        <td width="400px"> 
+                        <td width="70%"> 
                             <xsl:apply-templates select="title"/>
                    
                         </td>

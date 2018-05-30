@@ -34,9 +34,9 @@
         </html>
     </xsl:template>
     
-    <xsl:template match="textbook">
+    <xsl:template match="textbooks">
         
-        <table class="textbook">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Title</th>
@@ -47,7 +47,16 @@
                 </tr>
             </thead>
             <tbody>
-                <td width="400px"> 
+                <xsl:apply-templates/>
+            </tbody>
+        </table>
+        
+        
+    </xsl:template>
+   
+    <xsl:template match="textbook">
+        <tr>
+                        <td width="400px"> 
                     <a href="./BookDetail.jsp?title={title}"> <!--/bookDetails?id=<xsl:apply-templates select="id"/> -->
                         <xsl:apply-templates select="title"/>
                     </a>
@@ -61,14 +70,9 @@
                 <td>
                     <xsl:apply-templates select="reservation"/>
                 </td>
-              
+        </tr>
                 
-            </tbody>
-        </table>
-        
-        
     </xsl:template>
-   
   
  
     

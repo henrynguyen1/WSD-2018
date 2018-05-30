@@ -24,7 +24,7 @@
         <c:import url="<%=xml%>" var="inputDoc" />
 
 
-        <c:import url="./Reservation.xsl" var="stylesheet" />
+        <c:import url="./WEB-INF/Reservation.xsl" var="stylesheet" />
 
         <!-- Transform xml inputDoc using stylesheet -->
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
