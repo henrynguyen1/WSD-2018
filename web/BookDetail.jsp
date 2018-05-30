@@ -2,6 +2,8 @@
     Document   : BookDetail
     Created on : 23/05/2018, 3:19:17 PM
     Author     : HenryNguyen
+
+    This page is used to display info of book retrieved using REST
 --%>
 <%@page import="java.net.URLEncoder"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,6 +12,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 
+// Create URL based on the book
 <%String title = request.getParameter("title") == null ? "" : URLEncoder.encode(request.getParameter("title"), "UTF-8").replace("+", "%20"); %>
 <%String headerT = request.getParameter("title");%>
 <% String xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?title=" + title;%>
@@ -20,10 +23,11 @@
     <h1>Book Details: <%= headerT%> </h1>
 </head>
 <body>
+    // Displaying book details
         <form action = "Reservation.jsp" method="post">  
     <c:import url="<%=xml%>" var="inputDoc" />
 
-
+    // Import set of rules from BookDetail xsl
     <c:import url=".//WEB-INF/BookDetail.xsl"
               var="stylesheet" />
 
@@ -31,6 +35,7 @@
     <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
     </x:transform>
 
+    // User can access reserve function through here
     <p><input type="submit" value="Reserve"/></p> 
         </form>      
 </body>
