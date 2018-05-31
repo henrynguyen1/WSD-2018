@@ -65,7 +65,7 @@ public class ListerApplication implements Serializable {
         public void updateXML(Users users, String filePath) throws Exception {
         this.users = users;
         this.filePath = filePath;
-        JAXBContext jc = JAXBContext.newInstance(Textbooks.class);
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         FileOutputStream fout = new FileOutputStream(filePath);

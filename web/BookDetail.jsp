@@ -12,12 +12,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 
+<%-- Constructing the URL based on the book chosen on main page --%>
 <%String title = request.getParameter("title") == null ? "" : URLEncoder.encode(request.getParameter("title"), "UTF-8").replace("+", "%20"); %>
 <%String headerT = request.getParameter("title");%>
 <% String xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?title=" + title;%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Import header for navigation -->
         <title>Book Details <%= headerT%> </title>
         <jsp:include page="WEB-INF/Includes/Header.jsp"/>
     </head>
@@ -34,10 +36,11 @@
                 <!-- Transform xml inputDoc using stylesheet -->
                 <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
                 </x:transform>
-
+                <!-- Navigate to reserving a book -->
                 <p><input type="submit" value="Reserve"/></p> 
             </form>
         </div>
+        <!-- Importing footer of website -->
         <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
     </body>
 </html>

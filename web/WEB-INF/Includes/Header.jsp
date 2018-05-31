@@ -48,6 +48,7 @@
       <div class="container">
         <a class="navbar-brand" href="main.jsp">Home</a>
         <a class="btn btn-primary" href="login.jsp">Sign In</a>
+        <a class="btn btn-primary" href="register.jsp">Register</a>
       </div>
     </nav>
 <!-- Bootstrap core JavaScript -->

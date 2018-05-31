@@ -2,6 +2,8 @@
     Document   : textbookAction
     Created on : May 28, 2018, 11:25:48 PM
     Author     : bsapr
+
+    This page takess input from addTextbook and put them into XML file
 --%>
 
 <%@page import="project.wsd.*" contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,12 +12,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Textbook Confirm</title>
+        <%-- Import header for web page --%>
         <jsp:include page="WEB-INF/Includes/Header.jsp"/>
     </head>
     <body>
+        <%-- Setting access for Textbook xml --%>
                     <% String filePath = application.getRealPath("WEB-INF/Textbook.xml");%>
         <jsp:useBean id="textbookApp" class="project.wsd.TextbookApplication" scope="application">
             <jsp:setProperty name="textbookApp" property="filePath" value="<%=filePath%>"/>
+            <%-- Take input from previous form and create a new xml space for book --%>
         </jsp:useBean>
                     <%
                         User user = (User)session.getAttribute("user");
@@ -43,5 +48,6 @@
                     %>
                     <div class="container"><h2>Your book as been successfully added.</h2></div>
     </body>
+    <%-- Import footer for web page --%>
     <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </html>

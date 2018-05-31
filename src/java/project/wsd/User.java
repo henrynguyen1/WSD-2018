@@ -7,7 +7,7 @@ package project.wsd;
 
 /**
  *
- * @author Henry
+ * @author Anh Minh Tran
  */
 
 import java.io.Serializable;
@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.*;
  * @author Henry
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement
+@XmlRootElement(name="User")
 public class User implements Serializable {
 
     @XmlElement(name = "email")
@@ -31,14 +31,7 @@ public class User implements Serializable {
     @XmlAttribute(name = "userID")
     private int userID;
 
-    public int getUserID() {
-        return userID;
-    }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
-    
     public User() {
     }
 
@@ -49,6 +42,14 @@ public class User implements Serializable {
         this.userID = userID;
        
     }
+        public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+    
     public String getEmail() {
         return email;
     }

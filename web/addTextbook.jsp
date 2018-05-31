@@ -2,6 +2,8 @@
     Document   : addTextbook
     Created on : May 27, 2018, 7:00:56 PM
     Author     : bsapr
+
+    This page takes input of the user to add a new textbook
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,7 +15,7 @@
     </head>
     <body>
         <h1>List New Textbook</h1>
-
+        <!-- Create a form of input to forward to textbookAction.jsp -->
         <form action="textbookAction.jsp" method="post">
             <table>
                 <tr>

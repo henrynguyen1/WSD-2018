@@ -2,6 +2,9 @@
     Document   : main
     Created on : May 16, 2018, 1:39:06 PM
     Author     : bsapr
+
+    This is the main page for website, display simple info of books and set 
+    options for viewers and users
 --%>
 
 <%@page import="java.net.URLEncoder"%>
@@ -10,6 +13,7 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+
 <%String test = request.getParameter("title");
     String xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?unique";
     String title = request.getParameter("title") == null ? "" : URLEncoder.encode(request.getParameter("title"), "UTF-8").replace("+", "%20");
@@ -21,8 +25,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Main</title>
+        <%-- Import header jsp for web page --%>
         <jsp:include page="./WEB-INF/Includes/Header.jsp"/>
     </head>
+    <%-- Check if user has logged in or not to display option --%>
     <%
         User user = (User) session.getAttribute("user");
     %>
@@ -54,6 +60,7 @@
     </x:transform>
 </div>
     <%}%>
+    <%-- Import footer for web page --%>
     <jsp:include page="./WEB-INF/Includes/Footer.jsp"/>
 </body>
 </html>

@@ -2,6 +2,8 @@
     Document   : login
     Created on : 07/05/2018, 5:13:32 PM
     Author     : Henry
+
+    This page take input from user to login into database
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,7 +16,7 @@
     </head>
     <body>
         <jsp:include page="./WEB-INF/Includes/Header.jsp"/>
-
+        <%-- Prepare input form to forward to loginAction--%>
         <form action="loginAction.jsp" method ="post">
             <div class="container">
                 <h1 align="center">Login</h1>

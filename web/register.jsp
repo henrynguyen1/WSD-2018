@@ -1,7 +1,9 @@
 <%-- 
     Document   : register
     Created on : 17/05/2018, 1:37:30 PM
-    Author     : Henry
+    Author     : Anh Minh Tran
+
+    Create form for new user to register
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,6 +18,7 @@
         <h1>Register</h1>
         <br>
         <br>
+        <%-- Prepare form to send over to registerAction jsp --%>
         <form action="registerAction.jsp" method ="post">
         <table>
             <tr>
@@ -31,25 +34,12 @@
                 <td><input type ="password" name="password"> </td>
             </tr>
             <tr>
-                <td>Date of Birth</td>
-                <td><input type = "date" name="date"> </td>
-            </tr>
-           
-            <tr>
-                <td>Agree to TOS</td>
-                <td><input type="checkbox" name="tos" value="true"></td>
-            </tr>
-            <tr>
-                <td></td>
                 <td>
                 <input type="submit" value="register">
                   
                 </td>
             </tr>
         </table>
-</form>
-        <form action="login.jsp">
-                <input type="submit" value="Cancel" />
             </form>
     </body>
 </html>

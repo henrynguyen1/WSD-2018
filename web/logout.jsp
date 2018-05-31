@@ -2,6 +2,8 @@
     Document   : logout
     Created on : 07/05/2018, 5:32:06 PM
     Author     : Henry
+
+    This page remove data in session registry and reset it eg. log out user
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

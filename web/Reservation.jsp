@@ -11,22 +11,24 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
-
+<!-- Building URL based on filtering of bookID -->
 <%String bookID = request.getParameter("bookID");%>
 <% String xml = "http://localhost:8080/WSD-2018/rest/textbook/filter?bookID=" + bookID;%>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Reserve a book</title>
+    <!-- Importing header for webpage -->
     <jsp:include page="./WEB-INF/Includes/Header.jsp"/>
 <h3 align="center">Reserve Textbook </h3>
 </head>
 <body>
-    <div class="container">    
+    <div class="container">   
+        <!-- Prepare form to send over to reservation action page -->
         <form action="ReserveAction.jsp" method="post">
             <c:import url="<%=xml%>" var="inputDoc" />
 
-
+            <!-- Importing rules from reservation.xsl -->
             <c:import url="./WEB-INF/Reservation.xsl" var="stylesheet" />
 
             <!-- Transform xml inputDoc using stylesheet -->
@@ -39,7 +41,7 @@
                     String test = "http://localhost:8080/WSD-2018/rest/reservations/filter?bookID=" + bookID;
                     if (test != "") {
             %>
-
+            <!-- Checking reservation details for the book -->
             <h3 align="center">Here are the reservations for this book</h3>
             <br>
             <c:import url="<%=test%>" var="inputDoc2" />

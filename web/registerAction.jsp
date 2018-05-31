@@ -2,6 +2,8 @@
     Document   : registerAction
     Created on : 30/05/2018, 7:51:34 PM
     Author     : Anh Minh Tran
+
+    This page will handle register data from register jsp file
 --%>
 
 
@@ -12,13 +14,16 @@
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Textbook Confirm</title>
+            <%-- Import header for web page --%>
             <jsp:include page="WEB-INF/Includes/Header.jsp"/>
         </head>
         <body>
+            <%-- Setting access to User xml --%>
             <% String filePath = application.getRealPath("WEB-INF/User.xml");%>
             <jsp:useBean id="listerApp" class="project.wsd.ListerApplication" scope="application">
                 <jsp:setProperty name="listerApp" property="filePath" value="<%=filePath%>"/>
             </jsp:useBean>
+            <%-- Take data and create a new xml field for user --%>
             <%
                 Users users = listerApp.getUsers();
 
