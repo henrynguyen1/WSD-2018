@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This will generate ReserveApplication bean which will be used in the 
+ * "application" level scope
+ *  This file will attemp to load list of reservation from the XML
  */
 package project.wsd;
 import java.io.FileInputStream;

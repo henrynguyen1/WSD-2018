@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This file is used to create a JavaBean class call Reservation, to be used in
+ * other pages
+ * 
  */
 package project.wsd;
 import java.io.Serializable;

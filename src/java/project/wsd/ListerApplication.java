@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *  This will generate ListerApplication bean which will be used in the 
+ * "application" level scope
+ *  This file will attemp to load list of lister from the XML
  */
 package project.wsd;
 
@@ -61,8 +61,8 @@ public class ListerApplication implements Serializable {
     public void setUsers(Users users) {
         this.users = users;
     }
-    
-        public void updateXML(Users users, String filePath) throws Exception {
+
+    public void updateXML(Users users, String filePath) throws Exception {
         this.users = users;
         this.filePath = filePath;
         JAXBContext jc = JAXBContext.newInstance(Users.class);

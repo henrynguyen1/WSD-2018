@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This will generate TextbookApplicaiton bean which will be used in the 
+ * "application" level scope
+ *  This file will attemp to load list of textbook from the XML
  */
 package project.wsd;
 
@@ -47,6 +47,7 @@ public class TextbookApplication implements Serializable {
         }
     }
 
+    // Update XML when there is changes to data
     public void updateXML(Textbooks textbooks, String filePath) throws Exception {
         this.textbooks = textbooks;
         this.filePath = filePath;
@@ -66,7 +67,6 @@ public class TextbookApplication implements Serializable {
         m.marshal(textbooks, fout);
         fout.close();
     }
-    
 
     public Textbooks getTextbooks() {
         return textbooks;

@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This file create a Javabean class Textbooks to access a list of 
+ * textbooks in the website
  */
 package project.wsd;
 
@@ -32,7 +31,7 @@ public class Textbooks implements Serializable {
     public void removeTextbook(Textbook textbook){
         list.remove(textbook);
     }
-    
+    // Retrieve textbook based on bookID
     public Textbook getTextbook(int bookID){
        for (Textbook textbook: list){
            if(textbook.getBookID() == bookID)
@@ -40,7 +39,7 @@ public class Textbooks implements Serializable {
        }
        return null;
     }    
-    
+    // Retrieve the bok based on title
     public Textbook getTextbookT(String title){
         for (Textbook textbook:list){
             if(textbook.getTitle().equals(title))

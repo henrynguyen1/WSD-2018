@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This file create a Javabean class Users to access a list of 
+ * reservation in the website
  */
 package project.wsd;
 
@@ -31,7 +30,7 @@ public class Users implements Serializable {
         list.remove(user);
     }
     
-    
+    // Function to login
     public User login(String email, String password) {
         // For each user in the list...
         for (User user : list) {
@@ -40,7 +39,7 @@ public class Users implements Serializable {
         }
         return null; // Login incorrect. Return null.
     }
-    
+    // Retrieve user data based on ID
     public User getUser(int userID){
        for (User user: list){
            if(user.getUserID() == userID)
