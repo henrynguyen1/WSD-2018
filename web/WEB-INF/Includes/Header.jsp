@@ -2,6 +2,9 @@
     Document   : Header
     Created on : May 30, 2018, 12:19:12 PM
     Author     : bsapr
+
+    The bootstrap and CSS of this website was imported from open source available
+    online.
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" import="project.wsd.*" %>

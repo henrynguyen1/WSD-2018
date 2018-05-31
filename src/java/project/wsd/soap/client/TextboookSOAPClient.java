@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project.wsd.soap.client;
 
 import java.util.List;
@@ -187,6 +182,7 @@ public class TextboookSOAPClient {
         System.out.println("Your book has been added");
     }
 
+    // Removing book and update XML
     private static void RemoveBook() throws Exception_Exception {
         Scanner scanner = new Scanner(System.in);
         TextbookSOAP_Service locator = new TextbookSOAP_Service();
@@ -200,6 +196,7 @@ public class TextboookSOAPClient {
         }
     }
 
+    // Reserve a book and update the XML
     private static void Reserve() throws Exception_Exception {
         Scanner scanner = new Scanner(System.in);
         TextbookSOAP_Service locator = new TextbookSOAP_Service();
@@ -211,8 +208,8 @@ public class TextboookSOAPClient {
             int result = BookSOAP.reserve(title);
             if (result == 1) {
                 System.out.println(title + " has been reserved");
-            } else if (result ==0)  {
-                System.out.println("Cant");
+            } else if (result == 0) {
+                System.out.println("This bok has already been reserved");
             }
         }
     }

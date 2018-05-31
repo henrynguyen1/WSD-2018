@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package project.wsd.rest;
 
 /**
@@ -16,6 +12,7 @@ import javax.ws.rs.core.*;
 import javax.xml.bind.JAXBException;
 import java.io.*;
 
+// The service will be available through the link "/lister"
 @Path("/lister")
 public class ListerService {
 
@@ -34,6 +31,8 @@ public class ListerService {
         }
     }
     
+    // The service will be available through the link "users
+    // The result would be produced in XML form
     @Path("users")
     @GET
     @Produces(MediaType.APPLICATION_XML)

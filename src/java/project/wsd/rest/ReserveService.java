@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package project.wsd.rest;
 
 import javax.ws.rs.core.*;
@@ -20,6 +16,7 @@ import project.wsd.*;
  *
  * @author HenryNguyen
  */
+// This service will be available under the link of "/reservation"
 @Path("/reservations")
 public class ReserveService {
 
@@ -38,21 +35,25 @@ public class ReserveService {
             return reserveApp;
         }
     }
-
+    // This get reservation service will be available under the link 'reservation'
+    // The result will be formatted into XML
     @Path("reservation")
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public Reservations getReservations() throws JAXBException, IOException {
         return getReserveApp().getReservations();
     }
-
+    
+    // This service will be available under the link "reservationID"
+    // The result will be formatted into XML
     @Path("reservationID")
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public Reservation getReservation(@QueryParam("reservationID") int resID) throws JAXBException, IOException {
         return getReserveApp().getReservations().getReservation(resID);
     }
-
+    // This service will be available under the link "filter"
+    // The result will be formatted into XML
     @Path("filter")
     @GET
     @Produces(MediaType.APPLICATION_XML)

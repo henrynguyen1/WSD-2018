@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project.wsd.rest;
 
 /**
@@ -22,6 +17,7 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+// This service will be available through the link "/textbook"
 @Path("/textbook")
 public class TextbookService {
 
@@ -41,29 +37,31 @@ public class TextbookService {
         }
 
     }
-    
+
+    // This service will be available under the link "filter"
+    // The result will be formatted into XML
     @Path("filter")
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public List<Textbook> getTest(
-            @QueryParam("title") String title, 
-            @QueryParam("bookID") int bookID, 
+            @QueryParam("title") String title,
+            @QueryParam("bookID") int bookID,
             @QueryParam("unique") String unique,
             @QueryParam("lister") String lister,
             @QueryParam("category") String category
     )
-            throws JAXBException, IOException{
+            throws JAXBException, IOException {
         List<Textbook> values = getTextbookApp().getTextbooks().getList();
-        if(title !=null){
-        values = values.stream().filter(new Predicate<Textbook>() {
-            @Override
-            public boolean test(Textbook p) {
-                return p.getTitle().equals(title);
-            }
-        }).collect(Collectors.toList());
-        
+        if (title != null) {
+            values = values.stream().filter(new Predicate<Textbook>() {
+                @Override
+                public boolean test(Textbook p) {
+                    return p.getTitle().equals(title);
+                }
+            }).collect(Collectors.toList());
+
         }
-         if (bookID != 0) {
+        if (bookID != 0) {
             values = values.stream().filter(new Predicate<Textbook>() {
                 @Override
                 public boolean test(Textbook p) {
@@ -71,16 +69,16 @@ public class TextbookService {
                 }
             }).collect(Collectors.toList());
         }
-         if(lister !=null){
-             values = values.stream().filter(new Predicate<Textbook>() {
-                 @Override
-                 public boolean test(Textbook p) {
-                     return p.getLister().equals(lister);
-                 }
-             }).collect(Collectors.toList());
-         }
-         
-          if (unique != null) {
+        if (lister != null) {
+            values = values.stream().filter(new Predicate<Textbook>() {
+                @Override
+                public boolean test(Textbook p) {
+                    return p.getLister().equals(lister);
+                }
+            }).collect(Collectors.toList());
+        }
+
+        if (unique != null) {
             Set<Textbook> uniqueValues = new HashSet<>();
             uniqueValues.addAll(values);
             values = new ArrayList<>(uniqueValues);

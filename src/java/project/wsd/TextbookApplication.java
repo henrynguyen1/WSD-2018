@@ -36,9 +36,9 @@ public class TextbookApplication implements Serializable {
             JAXBContext jc = JAXBContext.newInstance(Textbooks.class);
             Unmarshaller u = jc.createUnmarshaller();
 
-            // Now unmarshal the object from the file
+            // unmarshal the object from the file
             FileInputStream fin = new FileInputStream(filePath);
-            textbooks = (Textbooks) u.unmarshal(fin); // This loads the "shop" object
+            textbooks = (Textbooks) u.unmarshal(fin); 
             fin.close();
         } catch (Exception e) {
             if (textbooks == null) {

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package project.wsd.soap;
 
 import javax.annotation.Resource;
@@ -23,6 +19,7 @@ public class UserSOAP {
     @Resource
     private WebServiceContext context;
     
+    // Getting Lister Application to access method for lister
     private ListerApplication getListerApp()
     {
         ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
@@ -37,11 +34,12 @@ public class UserSOAP {
         }
     }
     
+    // Getting user object
     public Users getUsers()
     {
         return getListerApp().getUsers();
     }
-    
+    // Getting information of user details
     public User getUsersDetail(String email, String pass)
     {
        return getListerApp().getUsers().login(email, pass);

@@ -45,7 +45,7 @@ public class ListerApplication implements Serializable {
 
             // Now unmarshal the object from the file
             FileInputStream fin = new FileInputStream(filePath);
-            users = (Users) u.unmarshal(fin); // This loads the "shop" object
+            users = (Users) u.unmarshal(fin); 
             fin.close();
         } catch (Exception e) {
             if (users == null) {

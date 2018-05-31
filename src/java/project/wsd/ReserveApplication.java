@@ -44,9 +44,9 @@ public void setFilePath(String filePath) {
             JAXBContext jc = JAXBContext.newInstance(Reservations.class);
             Unmarshaller u = jc.createUnmarshaller();
 
-            // Now unmarshal the object from the file
+            // unmarshal the object from the file
             FileInputStream fin = new FileInputStream(filePath);
-            reservations = (Reservations) u.unmarshal(fin); // This loads the "shop" object
+            reservations = (Reservations) u.unmarshal(fin); 
             fin.close();
         } catch (Exception e) {
             if (reservations == null) {
