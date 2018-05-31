@@ -1,5 +1,8 @@
-Readme
+Group ID: 5-8
+    This website was created by:
+        Brendan Lam 12963738
+        Anh Minh Tran 12433948  
+        Henry Nguyen 12681108
 
-Please change main.jsp
-
-import file path to the corresponding path
+Instruction:
+    TO run the website, run main.jsp
